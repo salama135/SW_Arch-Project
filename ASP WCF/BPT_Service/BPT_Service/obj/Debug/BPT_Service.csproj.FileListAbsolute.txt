@@ -1,0 +1,7 @@
+D:\4th Year\Software Design and Architecture\Project\ASP WCF\BPT_Service\BPT_Service\bin\BPT_Service.dll.config
+D:\4th Year\Software Design and Architecture\Project\ASP WCF\BPT_Service\BPT_Service\bin\BPT_Service.dll
+D:\4th Year\Software Design and Architecture\Project\ASP WCF\BPT_Service\BPT_Service\bin\BPT_Service.pdb
+D:\4th Year\Software Design and Architecture\Project\ASP WCF\BPT_Service\BPT_Service\obj\Debug\BPT_Service.csprojAssemblyReference.cache
+D:\4th Year\Software Design and Architecture\Project\ASP WCF\BPT_Service\BPT_Service\obj\Debug\BPT_Service.csproj.CoreCompileInputs.cache
+D:\4th Year\Software Design and Architecture\Project\ASP WCF\BPT_Service\BPT_Service\obj\Debug\BPT_Service.dll
+D:\4th Year\Software Design and Architecture\Project\ASP WCF\BPT_Service\BPT_Service\obj\Debug\BPT_Service.pdb
