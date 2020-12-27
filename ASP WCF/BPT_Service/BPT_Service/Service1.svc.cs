@@ -22,22 +22,27 @@ namespace BPT_Service
 
             string passwordInDB = "";
 
-            connection.Open();
+            if (connection.State == System.Data.ConnectionState.Open)
+                connection.Close();
+            
+            if (connection.State == System.Data.ConnectionState.Closed)       
+                connection.Open();
 
             try
             {
-                SqlCommand sqlCommand = new SqlCommand("select password from Users where email=@h", connection);
-                sqlCommand.Parameters.Add("@h", email);
+                SqlCommand sqlCommand = new SqlCommand("select * from Users where email=@h", connection);
+                sqlCommand.Parameters.AddWithValue("@h", email);
                 SqlDataReader reader = sqlCommand.ExecuteReader();
                 while (reader.Read())
                 {
                     passwordInDB = reader["password"].ToString();
+                    user.id = int.Parse(reader["id"].ToString());
                 }
 
                 if(password == passwordInDB)
                 {
                     user.email = email;
-                    user.id = int.Parse(reader["id"].ToString());
+                    user.password = password;
                 }
                 else
                 {
@@ -53,16 +58,50 @@ namespace BPT_Service
             return user;
         }
 
+        public bool Register(string email, string password)
+        {
+            int count = 0;
+
+            if (connection.State == System.Data.ConnectionState.Open)
+                connection.Close();
+
+            if (connection.State == System.Data.ConnectionState.Closed)
+                connection.Open();
+
+            try
+            {
+                SqlCommand sqlCommand = new SqlCommand("select * from Users where email=@h", connection);
+                sqlCommand.Parameters.AddWithValue("@h", email);
+                SqlDataReader reader = sqlCommand.ExecuteReader();
+                while (reader.Read())
+                {
+                    count++;
+                }                
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+
+            connection.Close();
+
+            return count == 0;
+        }
+
         public User GetUserById(int id)
         {
             User user = new User();
 
-            connection.Open();
+            if (connection.State == System.Data.ConnectionState.Open)
+                connection.Close();
+
+            if (connection.State == System.Data.ConnectionState.Closed)
+                connection.Open();
 
             try
             {
                 SqlCommand sqlCommand = new SqlCommand("select * from Users where id=@h", connection);
-                sqlCommand.Parameters.Add("@h", id);
+                sqlCommand.Parameters.AddWithValue("@h", id);
                 SqlDataReader reader = sqlCommand.ExecuteReader();
                 while (reader.Read())
                 {
@@ -84,11 +123,16 @@ namespace BPT_Service
         {
             UserInfo userInfo = new UserInfo();
 
-            connection.Open();
+            if (connection.State == System.Data.ConnectionState.Open)
+                connection.Close();
+
+            if (connection.State == System.Data.ConnectionState.Closed)
+                connection.Open();
+
             try
             {
                 SqlCommand sqlCommand = new SqlCommand("select * from UsersInfo where id=@h", connection);
-                sqlCommand.Parameters.Add("@h", id);
+                sqlCommand.Parameters.AddWithValue("@h", id);
                 SqlDataReader reader = sqlCommand.ExecuteReader();
                 while (reader.Read())
                 {
@@ -111,11 +155,18 @@ namespace BPT_Service
 
         public User CreateUser(User user)
         {
-            connection.Open();
-            SqlCommand sqlCommand = new SqlCommand("insert into Users (email, password) VALUES (@f, @g)", connection);
-            sqlCommand.Parameters.Add("@f", user.email);
-            sqlCommand.Parameters.Add("@g", user.password);
-            sqlCommand.ExecuteNonQuery();
+            if (connection.State == System.Data.ConnectionState.Open)
+                connection.Close();
+
+            if (connection.State == System.Data.ConnectionState.Closed)
+                connection.Open();
+
+            SqlCommand sqlCommand = new SqlCommand("insert into Users (email, password) output INSERTED.ID VALUES (@f, @g)", connection);
+            sqlCommand.Parameters.AddWithValue("@f", user.email);
+            sqlCommand.Parameters.AddWithValue("@g", user.password);
+            int modified = (int)sqlCommand.ExecuteScalar();
+            user.id = modified;
+
             connection.Close();
 
             return user;
@@ -123,58 +174,93 @@ namespace BPT_Service
 
         public UserInfo CreateUserInfo(UserInfo user)
         {
-            connection.Open();
-            SqlCommand sqlCommand = new SqlCommand("insert into UsersInfo (name, age, weight, bloodPressure, gender) VALUES (@a, @b, @c, @d, @e)", connection);
-            sqlCommand.Parameters.Add("@a", user.name);
-            sqlCommand.Parameters.Add("@b", user.age);
-            sqlCommand.Parameters.Add("@c", user.weight);
-            sqlCommand.Parameters.Add("@d", user.bloodPressure);
-            sqlCommand.Parameters.Add("@e", user.gender);
+            if (connection.State == System.Data.ConnectionState.Open)
+                connection.Close();
+
+            if (connection.State == System.Data.ConnectionState.Closed)
+                connection.Open();
+
+            SqlCommand sqlCommand = new SqlCommand("insert into UsersInfo (id, name, gender, age, weight, bloodPressure) VALUES (@a, @b, @c, @d, @e, @f)", connection);
+            sqlCommand.Parameters.AddWithValue("@a", user.id);
+            sqlCommand.Parameters.AddWithValue("@b", user.name);
+            sqlCommand.Parameters.AddWithValue("@c", user.gender);
+            sqlCommand.Parameters.AddWithValue("@d", user.age);
+            sqlCommand.Parameters.AddWithValue("@e", user.weight);
+            sqlCommand.Parameters.AddWithValue("@f", user.bloodPressure);
             sqlCommand.ExecuteNonQuery();
             connection.Close();
 
             return user;
         }
 
-        public void UpdateUser(int id, User user)
+        public User UpdateUser(int id, User user)
         {
-            connection.Open();
-            SqlCommand sqlCommand = new SqlCommand("update Users set email=@f, password=@g where id=@h", connection);
-            sqlCommand.Parameters.Add("@f", user.email);
-            sqlCommand.Parameters.Add("@g", user.password);
-            sqlCommand.Parameters.Add("@h", user.id);
+            if (connection.State == System.Data.ConnectionState.Open)
+                connection.Close();
+
+            if (connection.State == System.Data.ConnectionState.Closed)
+                connection.Open();
+
+            SqlCommand sqlCommand = new SqlCommand("update Users set email=@a, password=@b where id=@c", connection);
+            sqlCommand.Parameters.AddWithValue("@a", user.email);
+            sqlCommand.Parameters.AddWithValue("@b", user.password);
+            sqlCommand.Parameters.AddWithValue("@c", id);
             sqlCommand.ExecuteNonQuery();
             connection.Close();
+
+            user.id = id;
+
+            return user;
         }
 
-        public void UpdateUserInfo(int id, UserInfo user)
+        public UserInfo UpdateUserInfo(int id, UserInfo user)
         {
-            connection.Open();
-            SqlCommand sqlCommand = new SqlCommand("update UsersTable set name=@a, age=@b, weight=@c, bloodPressure=@d, gender=@e where id=@h", connection);
-            sqlCommand.Parameters.Add("@a", user.name);
-            sqlCommand.Parameters.Add("@b", user.age);
-            sqlCommand.Parameters.Add("@c", user.weight);
-            sqlCommand.Parameters.Add("@d", user.bloodPressure);
-            sqlCommand.Parameters.Add("@e", user.gender);
-            sqlCommand.Parameters.Add("@h", user.id);
+
+            if (connection.State == System.Data.ConnectionState.Open)
+                connection.Close();
+
+            if (connection.State == System.Data.ConnectionState.Closed)
+                connection.Open();
+
+            SqlCommand sqlCommand = new SqlCommand("update UsersInfo set name=@b, gender=@c, age=@d, weight=@e, bloodPressure=@f where id=@a", connection);
+            sqlCommand.Parameters.AddWithValue("@a", id);
+            sqlCommand.Parameters.AddWithValue("@b", user.name);
+            sqlCommand.Parameters.AddWithValue("@c", user.gender);
+            sqlCommand.Parameters.AddWithValue("@d", user.age);
+            sqlCommand.Parameters.AddWithValue("@e", user.weight);
+            sqlCommand.Parameters.AddWithValue("@f", user.bloodPressure);
             sqlCommand.ExecuteNonQuery();
             connection.Close();
+
+            user.id = id;
+
+            return user;
         }
 
         public void DeleteUser(int id)
         {
-            connection.Open();
+            if (connection.State == System.Data.ConnectionState.Open)
+                connection.Close();
+
+            if (connection.State == System.Data.ConnectionState.Closed)
+                connection.Open();
+
             SqlCommand sqlCommand = new SqlCommand("delete from Users where id=@h", connection);
-            sqlCommand.Parameters.Add("@h", id);
+            sqlCommand.Parameters.AddWithValue("@h", id);
             sqlCommand.ExecuteNonQuery();
             connection.Close();
         }
 
         public void DeleteUserInfo(int id)
         {
-            connection.Open();
+            if (connection.State == System.Data.ConnectionState.Open)
+                connection.Close();
+
+            if (connection.State == System.Data.ConnectionState.Closed)
+                connection.Open();
+
             SqlCommand sqlCommand = new SqlCommand("delete from UsersInfo where id=@h", connection);
-            sqlCommand.Parameters.Add("@h", id);
+            sqlCommand.Parameters.AddWithValue("@h", id);
             sqlCommand.ExecuteNonQuery();
             connection.Close();
         }

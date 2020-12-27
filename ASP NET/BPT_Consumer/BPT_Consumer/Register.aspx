@@ -8,7 +8,7 @@
     <meta name="description" content=""/>
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors"/>
     <meta name="generator" content="Hugo 0.79.0"/>
-    <title>Signin Template · Bootstrap v5.0</title>
+    <title>BPT - Register</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sign-in/" /> 
     <!-- Bootstrap core CSS -->
@@ -37,26 +37,23 @@
   <body class="text-center">
     
     <main class="form-signin">
-      <form id="form1" runat="server">
-        <img class="mb-4" src="./assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"/>
-        <h1 class="h3 mb-3 fw-normal">Please Register</h1>
-        <label for="inputEmail" class="visually-hidden">Email address</label>
-        <input runat="server" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus/>
-        <label for="inputPassword" class="visually-hidden">Password</label>
-        <input runat="server" type="password" id="inputPassword" class="form-control" placeholder="Password" required/>
-        <label for="inputConfirmPassword" class="visually-hidden">Confirm Password</label>
-        <input runat="server" type="password" id="inputConfirmPassword" class="form-control" placeholder="Confirm Password" required/>
-        <div class="checkbox mb-3">
-          <label>
-              <input type="checkbox" value="remember-me"/> Remember me
-          </label>
+        <form id="form1" runat="server">
+            <img class="mb-4" src="./assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"/>
+            <h1 class="h3 mb-3 fw-normal">Please Register</h1>
+            <label for="inputEmail" class="visually-hidden">Email address</label>
+            <input runat="server" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus/>
+            <label for="inputPassword" class="visually-hidden">Password</label>
+            <input runat="server" type="password" id="inputPassword" class="form-control" placeholder="Password" required/>
+            <label for="inputConfirmPassword" class="visually-hidden">Confirm Password</label>
+            <input runat="server" type="password" id="inputConfirmPassword" class="form-control" placeholder="Confirm Password" required/>
+
+            <asp:Button ID="RegisterButton" runat="server" class="w-100 btn btn-lg btn-primary" type="submit" Text ="Register in" OnClick="RegisterButton_Click"></asp:Button>
+            <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
+        </form>
+        <div runat="server" id="AlertBox" class="alert alert-danger" role="alert" visible="false">
+            Something went wrong please check the email and password !
         </div>
-        <asp:Button ID="RegisterButton" runat="server" class="w-100 btn btn-lg btn-primary" type="submit" Text ="Sign in" OnClick="RegisterButton_Click"></asp:Button>
-        <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
-      </form>
     </main>  
-    <div runat="server" id="AlertBox" class="alert alert-danger" role="alert" visible="false">
-        Something when wrong please check the email and password !
-    </div>
+
   </body>
 </html>

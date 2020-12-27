@@ -17,11 +17,19 @@ namespace BPT_Consumer
 
         protected void RegisterButton_Click(object sender, EventArgs e)
         {
-            BPT_Service.User user = new User();
-
             string email = inputEmail.Value;
             string password = inputPassword.Value;
             string confirmPassword = inputConfirmPassword.Value;
+
+            if (Global.service.Register(email, password) == false)
+            {
+                AlertBox.InnerText = "Email already registered !";
+                AlertBox.Visible = true;
+                return;
+            }
+
+            BPT_Service.User user = new BPT_Service.User();
+            BPT_Service.UserInfo userInfo = new BPT_Service.UserInfo();
 
             if (password != confirmPassword)
             {
@@ -42,13 +50,24 @@ namespace BPT_Consumer
             {
                 user = Global.service.CreateUser(user);
                 Global.user = user;
+                
+                userInfo.id = user.id;
+                userInfo.name = "";
+                userInfo.gender = "";
+                userInfo.age = 0;
+                userInfo.weight = 0;
+                userInfo.bloodPressure = 0;
+
+                userInfo = Global.service.CreateUserInfo(userInfo);
+                Global.userInfo = userInfo;
 
                 Server.Transfer("Home.aspx", false);
             }
             catch (Exception ex)
             {
-                AlertBox.InnerText = "Something when wrong please check the email and password !";
+                AlertBox.InnerText = "Something went wrong please check the email and password !";
                 AlertBox.Visible = true;
+                return;
             }
         }
     }

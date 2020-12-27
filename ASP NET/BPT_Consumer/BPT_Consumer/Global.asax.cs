@@ -13,8 +13,8 @@ namespace BPT_Consumer
     public class Global : HttpApplication
     {
         public static BPT_Service.Service1Client service;
-        public static User user;
-        public static UserInfo userInfo;
+        public static BPT_Service.User user;
+        public static BPT_Service.UserInfo userInfo;
 
         void Application_Start(object sender, EventArgs e)
         {
@@ -22,7 +22,9 @@ namespace BPT_Consumer
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            service = new Service1Client();            
+            service = new Service1Client();
+            user = new BPT_Service.User();
+            userInfo = new BPT_Service.UserInfo();
         }
     }
 }

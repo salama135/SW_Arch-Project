@@ -18,20 +18,37 @@ namespace BPT_Consumer
         {
             string email = inputEmail.Value;
             string password = inputPassword.Value;
-
-            BPT_Service.User user = Global.service.SignIn(email, password);           
-            BPT_Service.UserInfo userInfo = Global.service.GetUserInfoById(user.id);
-            
-            if(user != null && userInfo != null)
+            try
             {
-                Global.user = user;
-                Global.userInfo = userInfo;
-                Server.Transfer("Home.aspx", false);
-            }
-            else
+                BPT_Service.User user = new BPT_Service.User();
+                BPT_Service.UserInfo userInfo = new BPT_Service.UserInfo();
+                
+                user = Global.service.SignIn(email, password);
+
+                if (user != null)
+                {
+                    userInfo = Global.service.GetUserInfoById(user.id);
+                }
+                else
+                {
+                    AlertBox.Visible = true;
+                    return;
+                }
+
+            
+                if(user != null && userInfo != null)
+                {
+                    Global.user = user;
+                    Global.userInfo = userInfo;
+                    Server.Transfer("Home.aspx", false);
+                }
+
+            }catch(Exception ex)
             {
                 AlertBox.Visible = true;
+                return;
             }
+ 
         }
     }
 }

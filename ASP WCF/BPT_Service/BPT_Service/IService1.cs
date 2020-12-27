@@ -16,6 +16,9 @@ namespace BPT_Service
 
         [OperationContract]
         User SignIn(string email, string password);
+        [OperationContract]
+
+        bool Register(string email, string password);
 
 
         [OperationContract]
@@ -33,10 +36,10 @@ namespace BPT_Service
 
 
         [OperationContract]
-        void UpdateUser(int id, User user);
+        User UpdateUser(int id, User user);
 
         [OperationContract]
-        void UpdateUserInfo(int id, UserInfo user);
+        UserInfo UpdateUserInfo(int id, UserInfo user);
 
 
         [OperationContract]

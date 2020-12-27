@@ -225,6 +225,12 @@ namespace BPT_Consumer.BPT_Service {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SignIn", ReplyAction="http://tempuri.org/IService1/SignInResponse")]
         System.Threading.Tasks.Task<BPT_Consumer.BPT_Service.User> SignInAsync(string email, string password);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Register", ReplyAction="http://tempuri.org/IService1/RegisterResponse")]
+        bool Register(string email, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Register", ReplyAction="http://tempuri.org/IService1/RegisterResponse")]
+        System.Threading.Tasks.Task<bool> RegisterAsync(string email, string password);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetUserById", ReplyAction="http://tempuri.org/IService1/GetUserByIdResponse")]
         BPT_Consumer.BPT_Service.User GetUserById(int id);
         
@@ -250,16 +256,16 @@ namespace BPT_Consumer.BPT_Service {
         System.Threading.Tasks.Task<BPT_Consumer.BPT_Service.UserInfo> CreateUserInfoAsync(BPT_Consumer.BPT_Service.UserInfo user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateUser", ReplyAction="http://tempuri.org/IService1/UpdateUserResponse")]
-        void UpdateUser(int id, BPT_Consumer.BPT_Service.User user);
+        BPT_Consumer.BPT_Service.User UpdateUser(int id, BPT_Consumer.BPT_Service.User user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateUser", ReplyAction="http://tempuri.org/IService1/UpdateUserResponse")]
-        System.Threading.Tasks.Task UpdateUserAsync(int id, BPT_Consumer.BPT_Service.User user);
+        System.Threading.Tasks.Task<BPT_Consumer.BPT_Service.User> UpdateUserAsync(int id, BPT_Consumer.BPT_Service.User user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateUserInfo", ReplyAction="http://tempuri.org/IService1/UpdateUserInfoResponse")]
-        void UpdateUserInfo(int id, BPT_Consumer.BPT_Service.UserInfo user);
+        BPT_Consumer.BPT_Service.UserInfo UpdateUserInfo(int id, BPT_Consumer.BPT_Service.UserInfo user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateUserInfo", ReplyAction="http://tempuri.org/IService1/UpdateUserInfoResponse")]
-        System.Threading.Tasks.Task UpdateUserInfoAsync(int id, BPT_Consumer.BPT_Service.UserInfo user);
+        System.Threading.Tasks.Task<BPT_Consumer.BPT_Service.UserInfo> UpdateUserInfoAsync(int id, BPT_Consumer.BPT_Service.UserInfo user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteUser", ReplyAction="http://tempuri.org/IService1/DeleteUserResponse")]
         void DeleteUser(int id);
@@ -309,6 +315,14 @@ namespace BPT_Consumer.BPT_Service {
             return base.Channel.SignInAsync(email, password);
         }
         
+        public bool Register(string email, string password) {
+            return base.Channel.Register(email, password);
+        }
+        
+        public System.Threading.Tasks.Task<bool> RegisterAsync(string email, string password) {
+            return base.Channel.RegisterAsync(email, password);
+        }
+        
         public BPT_Consumer.BPT_Service.User GetUserById(int id) {
             return base.Channel.GetUserById(id);
         }
@@ -341,19 +355,19 @@ namespace BPT_Consumer.BPT_Service {
             return base.Channel.CreateUserInfoAsync(user);
         }
         
-        public void UpdateUser(int id, BPT_Consumer.BPT_Service.User user) {
-            base.Channel.UpdateUser(id, user);
+        public BPT_Consumer.BPT_Service.User UpdateUser(int id, BPT_Consumer.BPT_Service.User user) {
+            return base.Channel.UpdateUser(id, user);
         }
         
-        public System.Threading.Tasks.Task UpdateUserAsync(int id, BPT_Consumer.BPT_Service.User user) {
+        public System.Threading.Tasks.Task<BPT_Consumer.BPT_Service.User> UpdateUserAsync(int id, BPT_Consumer.BPT_Service.User user) {
             return base.Channel.UpdateUserAsync(id, user);
         }
         
-        public void UpdateUserInfo(int id, BPT_Consumer.BPT_Service.UserInfo user) {
-            base.Channel.UpdateUserInfo(id, user);
+        public BPT_Consumer.BPT_Service.UserInfo UpdateUserInfo(int id, BPT_Consumer.BPT_Service.UserInfo user) {
+            return base.Channel.UpdateUserInfo(id, user);
         }
         
-        public System.Threading.Tasks.Task UpdateUserInfoAsync(int id, BPT_Consumer.BPT_Service.UserInfo user) {
+        public System.Threading.Tasks.Task<BPT_Consumer.BPT_Service.UserInfo> UpdateUserInfoAsync(int id, BPT_Consumer.BPT_Service.UserInfo user) {
             return base.Channel.UpdateUserInfoAsync(id, user);
         }
         

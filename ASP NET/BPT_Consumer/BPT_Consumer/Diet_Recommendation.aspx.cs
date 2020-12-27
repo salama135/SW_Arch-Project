@@ -11,7 +11,7 @@ namespace BPT_Consumer
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            /*
             TableRow r = new TableRow();
             TableCell c = new TableCell();
             c.Text = "Days";
@@ -29,7 +29,8 @@ namespace BPT_Consumer
 
 
 
-            int blood_pressure = Global.userInfo.bloodPressure;
+            //int blood_pressure = Global.userInfo.bloodPressure;
+            int blood_pressure = 50;
             if (blood_pressure <= 90)
             {
                 //low pressure plan
@@ -178,15 +179,17 @@ namespace BPT_Consumer
                 r.Cells.Add(c);
                 Table1.Rows.Add(r);
             }
+            */
 
         }
 
+        /*
         protected void Back_btn_Click(object sender, EventArgs e)
         {
             //go to main form 
-         //   Server.Transfer(".aspx", false);
+            //Server.Transfer(".aspx", false);
             Table1.Rows.Clear();
-
         }
+        */
     }
 }
