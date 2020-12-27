@@ -12,7 +12,7 @@
         <p>
             <asp:Button class="btn btn-primary btn-lg" ID="Button1" runat="server" OnClick="Button1_Click1" Text="Register" />
              &nbsp;OR 
-            <asp:Button class="btn btn-primary btn-lg" ID="Button2" runat="server" OnClick="Button2_Click1" Text="SignIn" />
+            <asp:Button class="btn btn-success btn-lg" ID="Button2" runat="server" OnClick="Button2_Click1" Text="SignIn" />
         </p>
     </div>
 

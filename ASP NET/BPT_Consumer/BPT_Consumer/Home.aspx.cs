@@ -11,7 +11,7 @@ namespace BPT_Consumer
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            TextBox1.Text = "Hello " + Global.user.name;
+
         }
 
         protected void TextBox1_TextChanged(object sender, EventArgs e)

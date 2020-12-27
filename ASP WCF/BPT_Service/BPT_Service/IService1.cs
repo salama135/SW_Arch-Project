@@ -15,15 +15,34 @@ namespace BPT_Service
         // TODO: Add your service operations here
 
         [OperationContract]
-        User GetById(int id);
+        User SignIn(string email, string password);
+
 
         [OperationContract]
-        User Create(User user);
+        User GetUserById(int id);
+        
+        [OperationContract]
+        UserInfo GetUserInfoById(int id);
+
 
         [OperationContract]
-        void Update(int id, User user);
+        User CreateUser(User user);
 
         [OperationContract]
-        void Delete(int id);
+        UserInfo CreateUserInfo(UserInfo user);
+
+
+        [OperationContract]
+        void UpdateUser(int id, User user);
+
+        [OperationContract]
+        void UpdateUserInfo(int id, UserInfo user);
+
+
+        [OperationContract]
+        void DeleteUser(int id);
+
+        [OperationContract]
+        void DeleteUserInfo(int id);
     }
 }

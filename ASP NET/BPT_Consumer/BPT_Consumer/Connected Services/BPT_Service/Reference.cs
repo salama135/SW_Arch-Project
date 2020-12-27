@@ -15,18 +15,21 @@ namespace BPT_Consumer.BPT_Service {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CompositeType", Namespace="http://schemas.datacontract.org/2004/07/BPT_Service")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="User", Namespace="http://schemas.datacontract.org/2004/07/BPT_Service")]
     [System.SerializableAttribute()]
-    public partial class CompositeType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class User : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool BoolValueField;
+        private string emailField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string StringValueField;
+        private int idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string passwordField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -39,27 +42,40 @@ namespace BPT_Consumer.BPT_Service {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool BoolValue {
+        public string email {
             get {
-                return this.BoolValueField;
+                return this.emailField;
             }
             set {
-                if ((this.BoolValueField.Equals(value) != true)) {
-                    this.BoolValueField = value;
-                    this.RaisePropertyChanged("BoolValue");
+                if ((object.ReferenceEquals(this.emailField, value) != true)) {
+                    this.emailField = value;
+                    this.RaisePropertyChanged("email");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string StringValue {
+        public int id {
             get {
-                return this.StringValueField;
+                return this.idField;
             }
             set {
-                if ((object.ReferenceEquals(this.StringValueField, value) != true)) {
-                    this.StringValueField = value;
-                    this.RaisePropertyChanged("StringValue");
+                if ((this.idField.Equals(value) != true)) {
+                    this.idField = value;
+                    this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string password {
+            get {
+                return this.passwordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.passwordField, value) != true)) {
+                    this.passwordField = value;
+                    this.RaisePropertyChanged("password");
                 }
             }
         }
@@ -76,9 +92,9 @@ namespace BPT_Consumer.BPT_Service {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="User", Namespace="http://schemas.datacontract.org/2004/07/BPT_Service")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="UserInfo", Namespace="http://schemas.datacontract.org/2004/07/BPT_Service")]
     [System.SerializableAttribute()]
-    public partial class User : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class UserInfo : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -90,9 +106,6 @@ namespace BPT_Consumer.BPT_Service {
         private int bloodPressureField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string emailField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string genderField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -100,9 +113,6 @@ namespace BPT_Consumer.BPT_Service {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string nameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string passwordField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int weightField;
@@ -139,19 +149,6 @@ namespace BPT_Consumer.BPT_Service {
                 if ((this.bloodPressureField.Equals(value) != true)) {
                     this.bloodPressureField = value;
                     this.RaisePropertyChanged("bloodPressure");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string email {
-            get {
-                return this.emailField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.emailField, value) != true)) {
-                    this.emailField = value;
-                    this.RaisePropertyChanged("email");
                 }
             }
         }
@@ -196,19 +193,6 @@ namespace BPT_Consumer.BPT_Service {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string password {
-            get {
-                return this.passwordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.passwordField, value) != true)) {
-                    this.passwordField = value;
-                    this.RaisePropertyChanged("password");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public int weight {
             get {
                 return this.weightField;
@@ -235,47 +219,59 @@ namespace BPT_Consumer.BPT_Service {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BPT_Service.IService1")]
     public interface IService1 {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetData", ReplyAction="http://tempuri.org/IService1/GetDataResponse")]
-        string GetData(int value);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SignIn", ReplyAction="http://tempuri.org/IService1/SignInResponse")]
+        BPT_Consumer.BPT_Service.User SignIn(string email, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetData", ReplyAction="http://tempuri.org/IService1/GetDataResponse")]
-        System.Threading.Tasks.Task<string> GetDataAsync(int value);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SignIn", ReplyAction="http://tempuri.org/IService1/SignInResponse")]
+        System.Threading.Tasks.Task<BPT_Consumer.BPT_Service.User> SignInAsync(string email, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
-        BPT_Consumer.BPT_Service.CompositeType GetDataUsingDataContract(BPT_Consumer.BPT_Service.CompositeType composite);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetUserById", ReplyAction="http://tempuri.org/IService1/GetUserByIdResponse")]
+        BPT_Consumer.BPT_Service.User GetUserById(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
-        System.Threading.Tasks.Task<BPT_Consumer.BPT_Service.CompositeType> GetDataUsingDataContractAsync(BPT_Consumer.BPT_Service.CompositeType composite);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetUserById", ReplyAction="http://tempuri.org/IService1/GetUserByIdResponse")]
+        System.Threading.Tasks.Task<BPT_Consumer.BPT_Service.User> GetUserByIdAsync(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAll", ReplyAction="http://tempuri.org/IService1/GetAllResponse")]
-        BPT_Consumer.BPT_Service.User[] GetAll();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetUserInfoById", ReplyAction="http://tempuri.org/IService1/GetUserInfoByIdResponse")]
+        BPT_Consumer.BPT_Service.UserInfo GetUserInfoById(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAll", ReplyAction="http://tempuri.org/IService1/GetAllResponse")]
-        System.Threading.Tasks.Task<BPT_Consumer.BPT_Service.User[]> GetAllAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetUserInfoById", ReplyAction="http://tempuri.org/IService1/GetUserInfoByIdResponse")]
+        System.Threading.Tasks.Task<BPT_Consumer.BPT_Service.UserInfo> GetUserInfoByIdAsync(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetById", ReplyAction="http://tempuri.org/IService1/GetByIdResponse")]
-        BPT_Consumer.BPT_Service.User GetById(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateUser", ReplyAction="http://tempuri.org/IService1/CreateUserResponse")]
+        BPT_Consumer.BPT_Service.User CreateUser(BPT_Consumer.BPT_Service.User user);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetById", ReplyAction="http://tempuri.org/IService1/GetByIdResponse")]
-        System.Threading.Tasks.Task<BPT_Consumer.BPT_Service.User> GetByIdAsync(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateUser", ReplyAction="http://tempuri.org/IService1/CreateUserResponse")]
+        System.Threading.Tasks.Task<BPT_Consumer.BPT_Service.User> CreateUserAsync(BPT_Consumer.BPT_Service.User user);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Create", ReplyAction="http://tempuri.org/IService1/CreateResponse")]
-        BPT_Consumer.BPT_Service.User Create(BPT_Consumer.BPT_Service.User user);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateUserInfo", ReplyAction="http://tempuri.org/IService1/CreateUserInfoResponse")]
+        BPT_Consumer.BPT_Service.UserInfo CreateUserInfo(BPT_Consumer.BPT_Service.UserInfo user);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Create", ReplyAction="http://tempuri.org/IService1/CreateResponse")]
-        System.Threading.Tasks.Task<BPT_Consumer.BPT_Service.User> CreateAsync(BPT_Consumer.BPT_Service.User user);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateUserInfo", ReplyAction="http://tempuri.org/IService1/CreateUserInfoResponse")]
+        System.Threading.Tasks.Task<BPT_Consumer.BPT_Service.UserInfo> CreateUserInfoAsync(BPT_Consumer.BPT_Service.UserInfo user);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Update", ReplyAction="http://tempuri.org/IService1/UpdateResponse")]
-        void Update(int id, BPT_Consumer.BPT_Service.User user);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateUser", ReplyAction="http://tempuri.org/IService1/UpdateUserResponse")]
+        void UpdateUser(int id, BPT_Consumer.BPT_Service.User user);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Update", ReplyAction="http://tempuri.org/IService1/UpdateResponse")]
-        System.Threading.Tasks.Task UpdateAsync(int id, BPT_Consumer.BPT_Service.User user);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateUser", ReplyAction="http://tempuri.org/IService1/UpdateUserResponse")]
+        System.Threading.Tasks.Task UpdateUserAsync(int id, BPT_Consumer.BPT_Service.User user);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Delete", ReplyAction="http://tempuri.org/IService1/DeleteResponse")]
-        void Delete(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateUserInfo", ReplyAction="http://tempuri.org/IService1/UpdateUserInfoResponse")]
+        void UpdateUserInfo(int id, BPT_Consumer.BPT_Service.UserInfo user);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Delete", ReplyAction="http://tempuri.org/IService1/DeleteResponse")]
-        System.Threading.Tasks.Task DeleteAsync(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateUserInfo", ReplyAction="http://tempuri.org/IService1/UpdateUserInfoResponse")]
+        System.Threading.Tasks.Task UpdateUserInfoAsync(int id, BPT_Consumer.BPT_Service.UserInfo user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteUser", ReplyAction="http://tempuri.org/IService1/DeleteUserResponse")]
+        void DeleteUser(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteUser", ReplyAction="http://tempuri.org/IService1/DeleteUserResponse")]
+        System.Threading.Tasks.Task DeleteUserAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteUserInfo", ReplyAction="http://tempuri.org/IService1/DeleteUserInfoResponse")]
+        void DeleteUserInfo(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteUserInfo", ReplyAction="http://tempuri.org/IService1/DeleteUserInfoResponse")]
+        System.Threading.Tasks.Task DeleteUserInfoAsync(int id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -305,60 +301,76 @@ namespace BPT_Consumer.BPT_Service {
                 base(binding, remoteAddress) {
         }
         
-        public string GetData(int value) {
-            return base.Channel.GetData(value);
+        public BPT_Consumer.BPT_Service.User SignIn(string email, string password) {
+            return base.Channel.SignIn(email, password);
         }
         
-        public System.Threading.Tasks.Task<string> GetDataAsync(int value) {
-            return base.Channel.GetDataAsync(value);
+        public System.Threading.Tasks.Task<BPT_Consumer.BPT_Service.User> SignInAsync(string email, string password) {
+            return base.Channel.SignInAsync(email, password);
         }
         
-        public BPT_Consumer.BPT_Service.CompositeType GetDataUsingDataContract(BPT_Consumer.BPT_Service.CompositeType composite) {
-            return base.Channel.GetDataUsingDataContract(composite);
+        public BPT_Consumer.BPT_Service.User GetUserById(int id) {
+            return base.Channel.GetUserById(id);
         }
         
-        public System.Threading.Tasks.Task<BPT_Consumer.BPT_Service.CompositeType> GetDataUsingDataContractAsync(BPT_Consumer.BPT_Service.CompositeType composite) {
-            return base.Channel.GetDataUsingDataContractAsync(composite);
+        public System.Threading.Tasks.Task<BPT_Consumer.BPT_Service.User> GetUserByIdAsync(int id) {
+            return base.Channel.GetUserByIdAsync(id);
         }
         
-        public BPT_Consumer.BPT_Service.User[] GetAll() {
-            return base.Channel.GetAll();
+        public BPT_Consumer.BPT_Service.UserInfo GetUserInfoById(int id) {
+            return base.Channel.GetUserInfoById(id);
         }
         
-        public System.Threading.Tasks.Task<BPT_Consumer.BPT_Service.User[]> GetAllAsync() {
-            return base.Channel.GetAllAsync();
+        public System.Threading.Tasks.Task<BPT_Consumer.BPT_Service.UserInfo> GetUserInfoByIdAsync(int id) {
+            return base.Channel.GetUserInfoByIdAsync(id);
         }
         
-        public BPT_Consumer.BPT_Service.User GetById(int id) {
-            return base.Channel.GetById(id);
+        public BPT_Consumer.BPT_Service.User CreateUser(BPT_Consumer.BPT_Service.User user) {
+            return base.Channel.CreateUser(user);
         }
         
-        public System.Threading.Tasks.Task<BPT_Consumer.BPT_Service.User> GetByIdAsync(int id) {
-            return base.Channel.GetByIdAsync(id);
+        public System.Threading.Tasks.Task<BPT_Consumer.BPT_Service.User> CreateUserAsync(BPT_Consumer.BPT_Service.User user) {
+            return base.Channel.CreateUserAsync(user);
         }
         
-        public BPT_Consumer.BPT_Service.User Create(BPT_Consumer.BPT_Service.User user) {
-            return base.Channel.Create(user);
+        public BPT_Consumer.BPT_Service.UserInfo CreateUserInfo(BPT_Consumer.BPT_Service.UserInfo user) {
+            return base.Channel.CreateUserInfo(user);
         }
         
-        public System.Threading.Tasks.Task<BPT_Consumer.BPT_Service.User> CreateAsync(BPT_Consumer.BPT_Service.User user) {
-            return base.Channel.CreateAsync(user);
+        public System.Threading.Tasks.Task<BPT_Consumer.BPT_Service.UserInfo> CreateUserInfoAsync(BPT_Consumer.BPT_Service.UserInfo user) {
+            return base.Channel.CreateUserInfoAsync(user);
         }
         
-        public void Update(int id, BPT_Consumer.BPT_Service.User user) {
-            base.Channel.Update(id, user);
+        public void UpdateUser(int id, BPT_Consumer.BPT_Service.User user) {
+            base.Channel.UpdateUser(id, user);
         }
         
-        public System.Threading.Tasks.Task UpdateAsync(int id, BPT_Consumer.BPT_Service.User user) {
-            return base.Channel.UpdateAsync(id, user);
+        public System.Threading.Tasks.Task UpdateUserAsync(int id, BPT_Consumer.BPT_Service.User user) {
+            return base.Channel.UpdateUserAsync(id, user);
         }
         
-        public void Delete(int id) {
-            base.Channel.Delete(id);
+        public void UpdateUserInfo(int id, BPT_Consumer.BPT_Service.UserInfo user) {
+            base.Channel.UpdateUserInfo(id, user);
         }
         
-        public System.Threading.Tasks.Task DeleteAsync(int id) {
-            return base.Channel.DeleteAsync(id);
+        public System.Threading.Tasks.Task UpdateUserInfoAsync(int id, BPT_Consumer.BPT_Service.UserInfo user) {
+            return base.Channel.UpdateUserInfoAsync(id, user);
+        }
+        
+        public void DeleteUser(int id) {
+            base.Channel.DeleteUser(id);
+        }
+        
+        public System.Threading.Tasks.Task DeleteUserAsync(int id) {
+            return base.Channel.DeleteUserAsync(id);
+        }
+        
+        public void DeleteUserInfo(int id) {
+            base.Channel.DeleteUserInfo(id);
+        }
+        
+        public System.Threading.Tasks.Task DeleteUserInfoAsync(int id) {
+            return base.Channel.DeleteUserInfoAsync(id);
         }
     }
 }

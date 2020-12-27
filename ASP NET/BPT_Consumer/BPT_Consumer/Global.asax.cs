@@ -14,6 +14,7 @@ namespace BPT_Consumer
     {
         public static BPT_Service.Service1Client service;
         public static User user;
+        public static UserInfo userInfo;
 
         void Application_Start(object sender, EventArgs e)
         {

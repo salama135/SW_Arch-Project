@@ -29,7 +29,7 @@ namespace BPT_Consumer
 
 
 
-            int blood_pressure = Global.user.bloodPressure;
+            int blood_pressure = Global.userInfo.bloodPressure;
             if (blood_pressure <= 90)
             {
                 //low pressure plan

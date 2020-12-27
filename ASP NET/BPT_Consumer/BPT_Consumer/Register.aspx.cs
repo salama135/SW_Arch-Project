@@ -15,38 +15,40 @@ namespace BPT_Consumer
 
         }
 
-        protected void Button1_Click1(object sender, EventArgs e)
+        protected void RegisterButton_Click(object sender, EventArgs e)
         {
             BPT_Service.User user = new User();
-           
-            user.name = TextBox1.Text;
-            user.age = int.Parse(TextBox2.Text);
-            user.weight = int.Parse(TextBox3.Text);
-            user.bloodPressure = int.Parse(TextBox4.Text);
-            user.gender = TextBox5.Text;
-            user.email = TextBox6.Text;
-            user.password = TextBox7.Text;
 
-            bool OK = true;
+            string email = inputEmail.Value;
+            string password = inputPassword.Value;
+            string confirmPassword = inputConfirmPassword.Value;
 
-            try
+            if (password != confirmPassword)
             {
-                Global.service.Create(user);
-            }
-            catch (Exception ex)
-            {
-                OK = false;
+                AlertBox.InnerText = "passwords don't match !";
+                AlertBox.Visible = true;
 
-            }
-
-            if (OK)
-            {
-                Global.user = user;
-                Server.Transfer("Home.aspx", false);
+                return;
             }
             else
             {
-                Server.Transfer("Register.aspx", false);
+                user.email = email;
+                user.password = password;
+            }
+
+            AlertBox.Visible = false;
+
+            try
+            {
+                user = Global.service.CreateUser(user);
+                Global.user = user;
+
+                Server.Transfer("Home.aspx", false);
+            }
+            catch (Exception ex)
+            {
+                AlertBox.InnerText = "Something when wrong please check the email and password !";
+                AlertBox.Visible = true;
             }
         }
     }
