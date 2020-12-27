@@ -4,16 +4,21 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div class="jumbotron">
-        <h1>Welcome to 
-            </h1>
-        <h3>Blood Pressure Tracker</h3>
-        <br />
-        <p>
-            <asp:Button class="btn btn-primary btn-lg" ID="Button1" runat="server" OnClick="Button1_Click1" Text="Register" />
-             &nbsp;OR 
-            <asp:Button class="btn btn-success btn-lg" ID="Button2" runat="server" OnClick="Button2_Click1" Text="SignIn" />
-        </p>
+    <div class="jumbotron text-white jumbotron-image shadow" style="background-image: url(./BloodPressure.jpg);">
+        <div class="row align-items-center">
+            <div class="col">
+
+                <h2 >Welcome to </h2>
+                <h1>Blood Pressure Tracker</h1>
+                <br />
+                <p>
+                    <asp:Button class="btn btn-primary btn-lg" ID="Button1" runat="server" OnClick="Button1_Click1" Text="Register" />
+                     &nbsp;OR 
+                    <asp:Button class="btn btn-success btn-lg" ID="Button2" runat="server" OnClick="Button2_Click1" Text="SignIn" />
+                </p>
+            </div>
+
+        </div>
     </div>
 
 
