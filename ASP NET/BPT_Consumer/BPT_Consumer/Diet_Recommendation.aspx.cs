@@ -11,175 +11,137 @@ namespace BPT_Consumer
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*
-            TableRow r = new TableRow();
-            TableCell c = new TableCell();
-            c.Text = "Days";
-            r.Cells.Add(c);
-            c = new TableCell();
-            c.Text = "Meal 1";
-            r.Cells.Add(c);
-            c = new TableCell();
-            c.Text = "Meal 2";
-            r.Cells.Add(c);
-            c = new TableCell();
-            c.Text = "Meal 3";
-            r.Cells.Add(c);
-            Table1.Rows.Add(r);
 
 
+            table1.Rows[2].Cells[1].InnerText = "test";
+             
 
             //int blood_pressure = Global.userInfo.bloodPressure;
             int blood_pressure = 50;
             if (blood_pressure <= 90)
             {
                 //low pressure plan
-                r = new TableRow();
-                c = new TableCell();
-                c.Text = "Day 1";
-                r.Cells.Add(c);
-                c = new TableCell();
-                c.Text = "1 cup milk and 1 apple ";
-                r.Cells.Add(c);
-                c = new TableCell();
-                c.Text = "300gm meat and 300gm rice";
-                r.Cells.Add(c);
-                c = new TableCell();
-                c.Text = "8 ricecake 20gm peanut";
-                r.Cells.Add(c);
-                Table1.Rows.Add(r);
+                //day1
+
+                table1.Rows[2].Cells[1].InnerText = "1 cup milk and 1 apple ";
+
+                table1.Rows[2].Cells[2].InnerText = "300gm meat and 300gm rice";
+                table1.Rows[2].Cells[3].InnerText = "100gm rice and 100gm fish ";
+
+                table1.Rows[2].Cells[4].InnerText  = "8 ricecake 20gm peanut";
+
+                //day2
+
+                table1.Rows[3].Cells[1].InnerText = "1 cup milk and 1 apple ";
+
+                table1.Rows[3].Cells[2].InnerText = "300gm chicken and 300gm potato";
+                table1.Rows[3].Cells[3].InnerText = "50gm rice and 100gm bean";
+
+                table1.Rows[3].Cells[4].InnerText = "8 ricecake 20gm raw almonds";
+
+                //day3
+
+                table1.Rows[4].Cells[1].InnerText = "1 cup milk and 1 apple and 20gm nuts ";
+
+                table1.Rows[4].Cells[2].InnerText = "300gm meat and 300gm sweet potato";
+
+                table1.Rows[4].Cells[3].InnerText = "60gm beans and 50gm rice ";
+
+                table1.Rows[4].Cells[4].InnerText = "8 ricecake 20gm peanut";
+
+                //day4
+                table1.Rows[5].Cells[1].InnerText = "1 cup milk and 1 apple ";
+
+                table1.Rows[5].Cells[2].InnerText = "200gm fish and 100gm rice";
+                table1.Rows[5].Cells[3].InnerText = "100gm rice and 100gm potato ";
+
+                table1.Rows[5].Cells[4].InnerText = "8 ricecake 20gm peanut";
 
 
-                r = new TableRow();
-                c = new TableCell();
-                c.Text = "Day 2";
-                r.Cells.Add(c);
-                c = new TableCell();
-                c.Text = "1 cup milk and 1 apple ";
-                r.Cells.Add(c);
-                c = new TableCell();
-                c.Text = "300gm chicken and 300gm potato";
-                r.Cells.Add(c);
-                c = new TableCell();
-                c.Text = "8 ricecake 20gm raw almonds";
-                r.Cells.Add(c);
-                Table1.Rows.Add(r);
-
-                r = new TableRow();
-                c = new TableCell();
-                c.Text = "Day 3";
-                r.Cells.Add(c);
-                c = new TableCell();
-                c.Text = "1 cup milk and 1 apple and 20gm nuts ";
-                r.Cells.Add(c);
-                c = new TableCell();
-                c.Text = "300gm meat and 300gm sweet potato";
-                r.Cells.Add(c);
-                c = new TableCell();
-                c.Text = "8 ricecake 20gm peanut";
-                r.Cells.Add(c);
-                Table1.Rows.Add(r);
-               
             }
             else if (blood_pressure > 90 && blood_pressure <= 140)
             {
                 //normal 
-                r = new TableRow();
-                c = new TableCell();
-                c.Text = "Day 1";
-                r.Cells.Add(c);
-                c = new TableCell();
-                c.Text = "2 cup milk and 2 apples ";
-                r.Cells.Add(c);
-                c = new TableCell();
-                c.Text = "500gm meat and 400gm rice";
-                r.Cells.Add(c);
-                c = new TableCell();
-                c.Text = "10 ricecake 30gm peanut";
-                r.Cells.Add(c);
-                Table1.Rows.Add(r);
 
 
-                r = new TableRow();
-                c = new TableCell();
-                c.Text = "Day 2";
-                r.Cells.Add(c);
-                c = new TableCell();
-                c.Text = "2 cup milk and 2 apples ";
-                r.Cells.Add(c);
-                c = new TableCell();
-                c.Text = "500gm chicken and 400gm potato";
-                r.Cells.Add(c);
-                c = new TableCell();
-                c.Text = "10 ricecake 40gm raw almonds";
-                r.Cells.Add(c);
-                Table1.Rows.Add(r);
+                table1.Rows[2].Cells[1].InnerText = "2 cup milk and 2 apples ";
 
-                r = new TableRow();
-                c = new TableCell();
-                c.Text = "Day 3";
-                r.Cells.Add(c);
-                c = new TableCell();
-                c.Text = "2 cup milk and 2 apples and 30gm nuts ";
-                r.Cells.Add(c);
-                c = new TableCell();
-                c.Text = "400gm meat and 400gm sweet potato";
-                r.Cells.Add(c);
-                c = new TableCell();
-                c.Text = "10 ricecake 30gm peanut";
-                r.Cells.Add(c);
-                Table1.Rows.Add(r);
+                table1.Rows[2].Cells[2].InnerText = "500gm meat and 400gm rice";
+
+                table1.Rows[2].Cells[3].InnerText = "150gm rice and 150gm fish "; 
+
+                table1.Rows[2].Cells[4].InnerText = "10 ricecake 30gm peanut";
+
+
+
+                table1.Rows[3].Cells[1].InnerText = "2 cup milk and 2 apples ";
+
+                table1.Rows[3].Cells[2].InnerText = "250gm chicken and 90gm potato";
+
+                table1.Rows[3].Cells[3].InnerText = "100gm rice and 100gm bean";
+
+                table1.Rows[3].Cells[4].InnerText = "10 ricecake 40gm raw almonds";
+
+
+
+                table1.Rows[4].Cells[1].InnerText = "2 cup milk and 2 apples and 30gm nuts ";
+
+                table1.Rows[4].Cells[2].InnerText = "200gm meat and 100gm sweet potato";
+
+                table1.Rows[4].Cells[3].InnerText = "80gm beans and 90gm rice ";
+
+                table1.Rows[4].Cells[4].InnerText = "10 ricecake 30gm peanut";
+
+
+
+                table1.Rows[5].Cells[1].InnerText = "2 cup milk and 2 apples ";
+
+                table1.Rows[5].Cells[2].InnerText = "200gm meat and 100gm sweet potato";
+
+                table1.Rows[5].Cells[3].InnerText = "80gm beans  ";
+
+                table1.Rows[5].Cells[4].InnerText = "10 ricecake 30gm peanut";
             }
             else
             {
                 //abnormal
-                r = new TableRow();
-                c = new TableCell();
-                c.Text = "Day 1";
-                r.Cells.Add(c);
-                c = new TableCell();
-                c.Text = "1 cup milk and 2 apples ";
-                r.Cells.Add(c);
-                c = new TableCell();
-                c.Text = "200gm meat and 400gm rice";
-                r.Cells.Add(c);
-                c = new TableCell();
-                c.Text = "5 ricecake 30gm peanut";
-                r.Cells.Add(c);
-                Table1.Rows.Add(r);
+
+                table1.Rows[2].Cells[1].InnerText = "1 cup milk and 2 apples ";
+
+                table1.Rows[2].Cells[2].InnerText = "100gm meat and 300gm rice";
+
+                table1.Rows[2].Cells[3].InnerText = "150gm rice";
+
+                table1.Rows[2].Cells[4].InnerText = "5 ricecake 30gm peanut";
 
 
-                r = new TableRow();
-                c = new TableCell();
-                c.Text = "Day 2";
-                r.Cells.Add(c);
-                c = new TableCell();
-                c.Text = "1 cup milk and 2 apples ";
-                r.Cells.Add(c);
-                c = new TableCell();
-                c.Text = "200gm chicken and 400gm potato";
-                r.Cells.Add(c);
-                c = new TableCell();
-                c.Text = "5 ricecake 40gm raw almonds";
-                r.Cells.Add(c);
-                Table1.Rows.Add(r);
 
-                r = new TableRow();
-                c = new TableCell();
-                c.Text = "Day 3";
-                r.Cells.Add(c);
-                c = new TableCell();
-                c.Text = "1 cup milk and 2 apples and 30gm nuts ";
-                r.Cells.Add(c);
-                c = new TableCell();
-                c.Text = "200gm meat and 400gm sweet potato";
-                r.Cells.Add(c);
-                c = new TableCell();
-                c.Text = "5 ricecake 30gm peanut";
-                r.Cells.Add(c);
-                Table1.Rows.Add(r);
+
+                table1.Rows[3].Cells[1].InnerText = "1 cup milk and 2 apples ";
+
+                table1.Rows[3].Cells[2].InnerText = "50gm chicken and 400gm potato";
+                table1.Rows[3].Cells[3].InnerText = "80gm beans and 90gm rice ";
+
+                table1.Rows[3].Cells[4].InnerText ="5 ricecake 40gm raw almonds";
+
+
+
+                table1.Rows[4].Cells[1].InnerText ="1 cup milk and 2 apples and 30gm nuts ";
+
+                table1.Rows[4].Cells[2].InnerText = "100gm meat and 300gm sweet potato";
+
+                table1.Rows[4].Cells[3].InnerText = "100gm rice and 100gm bean";
+                table1.Rows[4].Cells[4].InnerText = "5 ricecake 30gm peanut";
+
+                table1.Rows[5].Cells[1].InnerText = "1 cup milk and 1 apples ";
+
+                table1.Rows[5].Cells[2].InnerText = "50gm chicken and 200gm sweet potato";
+                table1.Rows[5].Cells[3].InnerText = "80gm beans and 90gm rice ";
+
+                table1.Rows[5].Cells[4].InnerText = "5 ricecake ";
+
             }
-            */
+            
 
         }
 

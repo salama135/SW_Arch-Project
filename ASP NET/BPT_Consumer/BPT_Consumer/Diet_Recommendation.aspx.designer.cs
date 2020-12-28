@@ -7,11 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BPT_Consumer
-{
-
-
-    public partial class Diet_Recommendation
-    {
+namespace BPT_Consumer {
+    
+    
+    public partial class Diet_Recommendation {
+        
+        /// <summary>
+        /// table1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTable table1;
     }
 }

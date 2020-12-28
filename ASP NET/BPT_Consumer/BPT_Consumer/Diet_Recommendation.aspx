@@ -27,6 +27,85 @@
               font-size: 3.5rem;
             }
           }
+            .auto-style3 {
+                left: 0px;
+                top: 0;
+            }
+            .auto-style7 {
+                width: 274px;
+            }
+            .auto-style11 {
+                width: 254px;
+            }
+            .auto-style13 {
+                width: 186px;
+            }
+            .auto-style15 {
+                width: 191px;
+            }
+            .auto-style17 {
+                width: 189px;
+            }
+            .auto-style24 {
+                width: 186px;
+                height: 39px;
+            }
+            .auto-style25 {
+                width: 189px;
+                height: 39px;
+            }
+            .auto-style26 {
+                width: 274px;
+                height: 39px;
+            }
+            .auto-style27 {
+                width: 254px;
+                height: 39px;
+            }
+            .auto-style28 {
+                width: 191px;
+                height: 39px;
+            }
+            .auto-style29 {
+                width: 186px;
+                height: 46px;
+            }
+            .auto-style30 {
+                width: 189px;
+                height: 46px;
+            }
+            .auto-style31 {
+                width: 274px;
+                height: 46px;
+            }
+            .auto-style32 {
+                width: 254px;
+                height: 46px;
+            }
+            .auto-style33 {
+                width: 191px;
+                height: 46px;
+            }
+            .auto-style34 {
+                width: 186px;
+                height: 47px;
+            }
+            .auto-style35 {
+                width: 189px;
+                height: 47px;
+            }
+            .auto-style36 {
+                width: 274px;
+                height: 47px;
+            }
+            .auto-style37 {
+                width: 254px;
+                height: 47px;
+            }
+            .auto-style38 {
+                width: 191px;
+                height: 47px;
+            }
         </style>
 
         <!-- Custom styles for this template -->
@@ -36,115 +115,64 @@
 
   <body>
     
-    <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Company name</a>
-      <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      
-      <ul class="navbar-nav px-3">
-        <li class="nav-item text-nowrap">
-          <a class="nav-link" href="#">Sign out</a>
-        </li>
-      </ul>
+    <header class="auto-style3">
     </header>
     
-    <div class="container-fluid">
-        <div class="row">
-            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-                <div class="position-sticky pt-3">
-                <ul class="nav flex-column">
-                    <li class="nav-item">
-                    <a class="nav-link" runat="server" href="~/Home.aspx">
-                        <span data-feather="home"></span>
-                        Home
-                    </a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" runat="server" href="~/UserInfo.aspx">
-                        <span data-feather="user"></span>
-                        User Info
-                    </a>
-                    </li>
-                
-                    <li class="nav-item">
-                    <a class="nav-link active"href="#">
-                        <span data-feather="heart"></span>
-                        Diet Recommendation
-                    </a>
-                    </li>
-                
-                </ul>
-            
-                </div>
-            </nav>
-
-            <main class="container">
-              <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-                <h1 class="display-4">Pricing</h1>
-                <p class="lead">Quickly build an effective pricing table for your potential customers with this Bootstrap example. It’s built with default Bootstrap components and utilities with little customization.</p>
-              </div>
-
-              <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-                <div class="col">
-                    <div class="card mb-4 shadow-sm">
-                      <div class="card-header">
-                        <h4 class="my-0 fw-normal">Breakfast</h4>
-                      </div>
-                      <div class="card-body">
-                        <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>
-                        <ul class="list-unstyled mt-3 mb-4">
-                          <li>10 users included</li>
-                          <li>2 GB of storage</li>
-                          <li>Email support</li>
-                          <li>Help center access</li>
-                        </ul>
-                        <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
-                      </div>
-                    </div>
-                </div>
-                <div class="col">
-                  <div class="card mb-4 shadow-sm">
-                    <div class="card-header">
-                    <h4 class="my-0 fw-normal">Lunch</h4>
-                    </div>
-                  <div class="card-body">
-                    <h1 class="card-title pricing-card-title">$15 <small class="text-muted">/ mo</small></h1>
-                    <ul class="list-unstyled mt-3 mb-4">
-                      <li>20 users included</li>
-                      <li>10 GB of storage</li>
-                      <li>Priority email support</li>
-                      <li>Help center access</li>
-                    </ul>
-                    <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button>
-                  </div>
-                </div>
-                </div>
-                <div class="col">
-                  <div class="card mb-4 shadow-sm">
-                  <div class="card-header">
-                    <h4 class="my-0 fw-normal">Enterprise</h4>
-                  </div>
-                  <div class="card-body">
-                    <h1 class="card-title pricing-card-title">$29 <small class="text-muted">/ mo</small></h1>
-                    <ul class="list-unstyled mt-3 mb-4">
-                      <li>30 users included</li>
-                      <li>15 GB of storage</li>
-                      <li>Phone and email support</li>
-                      <li>Help center access</li>
-                    </ul>
-                    <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button>
-                  </div>
-                </div>
-                </div>
-              </div>
-            </main>
-         </div>
-    </div>
-
         <script src="./assets/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
         <script src="dashboard.js"></script>
+
+       <!-- new table -->
+       <table  class="table" runat="server" id="table1">
+  <thead>
+    <tr>
+      <th scope="col" class="auto-style13"></th>
+      <th scope="col" class="auto-style17">&nbsp;</th>
+      <th scope="col" class="auto-style7">&nbsp;</th>
+      <th scope="col" class="auto-style11">Diet plan</th>
+      <th scope="col" class="auto-style15"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row" class="auto-style13">Days</th>
+      <td class="auto-style17">Meal 1</td>
+      <td class="auto-style7">Meal 2</td>
+      <td class="auto-style11">Meal 3</td>
+      <td class="auto-style15">Meal 4</td>
+    </tr>
+
+    <tr class="table-primary">
+      <th scope="row" class="auto-style24">Day 1</th>
+      <td class="auto-style25"></td>
+      <td class="auto-style26"></td>
+      <td class="auto-style27"></td>
+      <td class="auto-style28"></td>
+    </tr>
+    <tr class="table-secondary">
+      <th scope="row" class="auto-style24">Day 2</th>
+      <td class="auto-style25"></td>
+      <td class="auto-style26"></td>
+      <td class="auto-style27"></td>
+      <td class="auto-style28"></td>
+    </tr>
+    <tr class="table-success">
+      <th scope="row" class="auto-style29">Day 3</th>
+      <td class="auto-style30"></td>
+      <td class="auto-style31"></td>
+      <td class="auto-style32"></td>
+      <td class="auto-style33"></td>
+    </tr>
+    <tr class="table-danger">
+      <th scope="row" class="auto-style34">Day 4</th>
+      <td class="auto-style35"></td>
+      <td class="auto-style36"></td>
+      <td class="auto-style37"></td>
+      <td class="auto-style38"></td>
+    </tr>
+  </tbody>
+</table>
+      
     </body>
 </html>
