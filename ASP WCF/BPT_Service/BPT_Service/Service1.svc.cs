@@ -299,10 +299,36 @@ namespace BPT_Service
             return " ok ";
         }
 
-        public bool SendReminder(string recipientEmail, string subject, string body, bool isHtml)
+        public bool SendReminder(string subject, string body, bool isHtml)
         {
             bool OK = true;
 
+            User user = new User();
+
+            if (connection.State == System.Data.ConnectionState.Open)
+                connection.Close();
+
+            if (connection.State == System.Data.ConnectionState.Closed)
+                connection.Open();
+
+            string email;
+
+            try
+            {
+                SqlCommand sqlCommand = new SqlCommand("select email from Users", connection);
+                SqlDataReader reader = sqlCommand.ExecuteReader();
+                while (reader.Read())
+                {
+                    email = reader["email"].ToString();
+                    SendEmail(email, "Blood Pressure reminder", "please meassure your blood pressure!", false);
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+
+            connection.Close();
 
             return OK;
         }

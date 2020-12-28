@@ -25,7 +25,7 @@ namespace BPT_Service
         string SendEmail(string recipientEmail, string subject, string body, bool isHtml);
 
         [OperationContract]
-        bool SendReminder(string recipientEmail, string subject, string body, bool isHtml);
+        bool SendReminder(string subject, string body, bool isHtml);
 
 
         [OperationContract]

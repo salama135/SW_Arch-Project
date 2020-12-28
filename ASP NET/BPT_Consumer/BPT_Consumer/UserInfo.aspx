@@ -74,6 +74,13 @@
                             Diet Recommendation
                         </a>
                         </li>
+
+                        <li class="nav-item">
+                        <a class="nav-link" runat="server" href="~/Diet_Recommendation.aspx">
+                            <span data-feather="heart"></span>
+                            Update Blood Preassure
+                        </a>
+                        </li>
                     </ul>
                 </div>
             </nav>
