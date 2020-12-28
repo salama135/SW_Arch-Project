@@ -332,5 +332,17 @@ namespace BPT_Service
 
             return OK;
         }
+
+        public void AddBP(int BP, int UserID)
+        {
+            connection.Open();
+            SqlCommand sqlCmd = new SqlCommand("insert into Blood_Pressure_Records (id, Blood_Pressure, Day, mTime) values (@i, @b, @d, @t)", connection);
+            sqlCmd.Parameters.AddWithValue("@i", UserID);
+            sqlCmd.Parameters.AddWithValue("@b", BP);
+            sqlCmd.Parameters.AddWithValue("@d", DateTime.Today.ToString("d"));
+            sqlCmd.Parameters.AddWithValue("@t", DateTime.Now.ToShortTimeString());
+            sqlCmd.ExecuteNonQuery();
+            connection.Close();
+        }
     }
 }

@@ -54,5 +54,8 @@ namespace BPT_Service
 
         [OperationContract]
         void DeleteUserInfo(int id);
+
+        [OperationContract]
+        void AddBP(int BP, int UserID);
     }
 }

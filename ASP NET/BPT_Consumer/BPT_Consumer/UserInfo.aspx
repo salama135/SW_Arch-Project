@@ -76,9 +76,9 @@
                         </li>
 
                         <li class="nav-item">
-                        <a class="nav-link" runat="server" href="~/Diet_Recommendation.aspx">
-                            <span data-feather="heart"></span>
-                            Update Blood Preassure
+                        <a class="nav-link" runat="server" href="UpdateBP.aspx">
+                            <span data-feather="bold"></span>
+                            Update Blood Pressure
                         </a>
                         </li>
                     </ul>

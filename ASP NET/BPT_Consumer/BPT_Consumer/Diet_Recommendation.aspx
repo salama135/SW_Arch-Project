@@ -8,7 +8,7 @@
         <meta name="description" content="" />
         <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors" />
         <meta name="generator" content="Hugo 0.79.0" />
-        <title>BPT - Diet - Recommendation</title>
+        <title>BPT - Diet Recommendation</title>
 
         <!-- Bootstrap core CSS -->
         <link href="./assets/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -73,7 +73,13 @@
                         Diet Recommendation
                     </a>
                     </li>
-                
+                    
+                    <li class="nav-item">
+                    <a class="nav-link" runat="server" href="UpdateBP.aspx">
+                        <span data-feather="bold"></span>
+                        Update Blood Pressure
+                    </a>
+                    </li>
                 </ul>
             
                 </div>
