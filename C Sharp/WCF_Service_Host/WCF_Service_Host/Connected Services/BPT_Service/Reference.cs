@@ -176,7 +176,11 @@ namespace BPT_Service
         System.Threading.Tasks.Task<string> SendEmailAsync(string recipientEmail, string subject, string body, bool isHtml);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SendReminder", ReplyAction="http://tempuri.org/IService1/SendReminderResponse")]
+<<<<<<< HEAD
         System.Threading.Tasks.Task<bool> SendReminderAsync(string recipientEmail, string subject, string body, bool isHtml);
+=======
+        System.Threading.Tasks.Task<bool> SendReminderAsync(string subject, string body, bool isHtml);
+>>>>>>> parent of bac515f... removed my email & password XD
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetUserById", ReplyAction="http://tempuri.org/IService1/GetUserByIdResponse")]
         System.Threading.Tasks.Task<BPT_Service.User> GetUserByIdAsync(int id);
@@ -268,9 +272,15 @@ namespace BPT_Service
             return base.Channel.SendEmailAsync(recipientEmail, subject, body, isHtml);
         }
         
+<<<<<<< HEAD
         public System.Threading.Tasks.Task<bool> SendReminderAsync(string recipientEmail, string subject, string body, bool isHtml)
         {
             return base.Channel.SendReminderAsync(recipientEmail, subject, body, isHtml);
+=======
+        public System.Threading.Tasks.Task<bool> SendReminderAsync(string subject, string body, bool isHtml)
+        {
+            return base.Channel.SendReminderAsync(subject, body, isHtml);
+>>>>>>> parent of bac515f... removed my email & password XD
         }
         
         public System.Threading.Tasks.Task<BPT_Service.User> GetUserByIdAsync(int id)
