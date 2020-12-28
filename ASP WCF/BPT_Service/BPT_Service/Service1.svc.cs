@@ -136,7 +136,6 @@ namespace BPT_Service
                     userInfo.name = reader["name"].ToString();
                     userInfo.age = int.Parse(reader["age"].ToString());
                     userInfo.weight = int.Parse(reader["weight"].ToString());
-                    userInfo.height = int.Parse(reader["height"].ToString());
                     userInfo.bloodPressure = int.Parse(reader["bloodPressure"].ToString());
                     userInfo.gender = reader["gender"].ToString();
                 }
@@ -177,14 +176,13 @@ namespace BPT_Service
             if (connection.State == System.Data.ConnectionState.Closed)
                 connection.Open();
 
-            SqlCommand sqlCommand = new SqlCommand("insert into UsersInfo (id, name, gender, age, weight, bloodPressure, height) VALUES (@a, @b, @c, @d, @e, @f, @g)", connection);
+            SqlCommand sqlCommand = new SqlCommand("insert into UsersInfo (id, name, gender, age, weight, bloodPressure) VALUES (@a, @b, @c, @d, @e, @f)", connection);
             sqlCommand.Parameters.AddWithValue("@a", user.id);
             sqlCommand.Parameters.AddWithValue("@b", user.name);
             sqlCommand.Parameters.AddWithValue("@c", user.gender);
             sqlCommand.Parameters.AddWithValue("@d", user.age);
             sqlCommand.Parameters.AddWithValue("@e", user.weight);
             sqlCommand.Parameters.AddWithValue("@f", user.bloodPressure);
-            sqlCommand.Parameters.AddWithValue("@g", user.height);
             sqlCommand.ExecuteNonQuery();
             connection.Close();
 
@@ -220,14 +218,13 @@ namespace BPT_Service
             if (connection.State == System.Data.ConnectionState.Closed)
                 connection.Open();
 
-            SqlCommand sqlCommand = new SqlCommand("update UsersInfo set name=@b, gender=@c, age=@d, weight=@e, bloodPressure=@f height=@g where id=@a", connection);
+            SqlCommand sqlCommand = new SqlCommand("update UsersInfo set name=@b, gender=@c, age=@d, weight=@e, bloodPressure=@f where id=@a", connection);
             sqlCommand.Parameters.AddWithValue("@a", id);
             sqlCommand.Parameters.AddWithValue("@b", user.name);
             sqlCommand.Parameters.AddWithValue("@c", user.gender);
             sqlCommand.Parameters.AddWithValue("@d", user.age);
             sqlCommand.Parameters.AddWithValue("@e", user.weight);
             sqlCommand.Parameters.AddWithValue("@f", user.bloodPressure);
-            sqlCommand.Parameters.AddWithValue("@g", user.height);
             sqlCommand.ExecuteNonQuery();
             connection.Close();
 
@@ -348,7 +345,6 @@ namespace BPT_Service
             sqlCmd.ExecuteNonQuery();
             connection.Close();
         }
-
         public List<BloodPressure> GetBloodPressures(int id)
         {
             if (connection.State == System.Data.ConnectionState.Open)
@@ -370,4 +366,5 @@ namespace BPT_Service
             return bloodPressures;
         }
     }
+
 }

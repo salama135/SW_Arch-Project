@@ -20,4 +20,17 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="UserInfo" nillable="true" type="tns:UserInfo" />
+  <xs:complexType name="ArrayOfBloodPressure">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BloodPressure" nillable="true" type="tns:BloodPressure" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBloodPressure" nillable="true" type="tns:ArrayOfBloodPressure" />
+  <xs:complexType name="BloodPressure">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Date" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BloodPressure" nillable="true" type="tns:BloodPressure" />
 </xs:schema>
