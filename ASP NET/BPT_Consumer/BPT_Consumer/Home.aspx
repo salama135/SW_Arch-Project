@@ -45,9 +45,9 @@
         <ul  class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
             <form id="form1" runat="server">
-             <asp:Button ID="SignInButton" runat="server" class="w-100 btn btn-sm btn-primary" type="submit" Text ="Sign Out" OnClick="SignOut"></asp:Button>
-        </form>
-          </li>
+                <asp:Button ID="SignOutButton" runat="server" class="w-100 btn btn-sm btn-primary" type="submit" Text ="Sign Out" OnClick="SignOut"></asp:Button>
+            </form>
+        </li>
         </ul>
     </header>
 

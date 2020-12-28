@@ -14,7 +14,12 @@ namespace BPT_Consumer
             Save_btn.Width = 250;
             Save_btn.Height = 35;
         }
-
+        protected void SignOut(object sender, EventArgs e)
+        {
+            Global.user = null;
+            Global.userInfo = null;
+            Response.Redirect("Default.aspx");
+        }
         protected void Save_btn_Click(object sender, EventArgs e)
         {
             if (TextBox1.Text.Trim().Length != 0)

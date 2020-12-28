@@ -336,7 +336,12 @@ namespace BPT_Service
 
         public void AddBP(int BP, int UserID)
         {
-            connection.Open();
+            if (connection.State == System.Data.ConnectionState.Open)
+                connection.Close();
+
+            if (connection.State == System.Data.ConnectionState.Closed)
+                connection.Open();
+
             SqlCommand sqlCmd = new SqlCommand("insert into Blood_Pressure_Records (id, Blood_Pressure, Day, mTime) values (@i, @b, @d, @t)", connection);
             sqlCmd.Parameters.AddWithValue("@i", UserID);
             sqlCmd.Parameters.AddWithValue("@b", BP);
@@ -352,6 +357,7 @@ namespace BPT_Service
 
             if (connection.State == System.Data.ConnectionState.Closed)
                 connection.Open();
+
             List<BloodPressure> bloodPressures = new List<BloodPressure>();
             SqlCommand sqlCommand = new SqlCommand("select * from Blood_Pressure_Records where id=@h", connection);
             sqlCommand.Parameters.AddWithValue("@h", id);

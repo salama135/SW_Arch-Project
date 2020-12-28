@@ -61,7 +61,9 @@
       
         <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-            <a class="nav-link" href="#">Sign out</a>
+            <form id="form1" runat="server">
+                <asp:Button ID="SignOutButton" runat="server" class="w-100 btn btn-sm btn-primary" type="submit" Text ="Sign Out" OnClick="SignOut"></asp:Button>
+            </form>
         </li>
         </ul>
     </header>

@@ -30,6 +30,13 @@ namespace BPT_Consumer
                 inputFemale.Checked = false;
         }
 
+        protected void SignOut(object sender, EventArgs e)
+        {
+            Global.user = null;
+            Global.userInfo = null;
+            Response.Redirect("Default.aspx");
+        }
+
         protected void Button1_Click(object sender, EventArgs e)
         {
             BPT_Service.User user = new BPT_Service.User();

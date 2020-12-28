@@ -11,11 +11,6 @@ namespace BPT_Consumer
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-
-         
-             
-
             //int blood_pressure = Global.userInfo.bloodPressure;
             int blood_pressure = 50;
             if (blood_pressure <= 90)
@@ -145,13 +140,11 @@ namespace BPT_Consumer
 
         }
 
-        /*
-        protected void Back_btn_Click(object sender, EventArgs e)
+        protected void SignOut(object sender, EventArgs e)
         {
-            //go to main form 
-            //Server.Transfer(".aspx", false);
-            Table1.Rows.Clear();
+            Global.user = null;
+            Global.userInfo = null;
+            Response.Redirect("Default.aspx");
         }
-        */
     }
 }

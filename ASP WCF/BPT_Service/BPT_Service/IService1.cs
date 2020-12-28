@@ -51,8 +51,6 @@ namespace BPT_Service
 
         [OperationContract]
         void DeleteUser(int id);
-        [OperationContract]
-        List<BloodPressure> GetBloodPressures(int id);
 
         [OperationContract]
         void DeleteUserInfo(int id);
@@ -61,6 +59,6 @@ namespace BPT_Service
         void AddBP(int BP, int UserID);
 
         [OperationContract]
-        public List<BloodPressure> GetBloodPressures(int id);
+        List<BloodPressure> GetBloodPressures(int id);
     }
 }
