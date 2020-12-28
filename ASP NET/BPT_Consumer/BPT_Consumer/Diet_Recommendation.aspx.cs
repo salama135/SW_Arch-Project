@@ -13,7 +13,7 @@ namespace BPT_Consumer
         {
 
 
-            table1.Rows[2].Cells[1].InnerText = "test";
+         
              
 
             //int blood_pressure = Global.userInfo.bloodPressure;
