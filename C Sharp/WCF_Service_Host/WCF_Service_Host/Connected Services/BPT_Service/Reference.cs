@@ -173,7 +173,7 @@ namespace BPT_Service
         System.Threading.Tasks.Task<bool> RegisterAsync(string email, string password);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SendEmail", ReplyAction="http://tempuri.org/IService1/SendEmailResponse")]
-        System.Threading.Tasks.Task<bool> SendEmailAsync(string recipientEmail, string subject, string body, bool isHtml);
+        System.Threading.Tasks.Task<string> SendEmailAsync(string recipientEmail, string subject, string body, bool isHtml);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SendReminder", ReplyAction="http://tempuri.org/IService1/SendReminderResponse")]
         System.Threading.Tasks.Task<bool> SendReminderAsync(string recipientEmail, string subject, string body, bool isHtml);
@@ -263,7 +263,7 @@ namespace BPT_Service
             return base.Channel.RegisterAsync(email, password);
         }
         
-        public System.Threading.Tasks.Task<bool> SendEmailAsync(string recipientEmail, string subject, string body, bool isHtml)
+        public System.Threading.Tasks.Task<string> SendEmailAsync(string recipientEmail, string subject, string body, bool isHtml)
         {
             return base.Channel.SendEmailAsync(recipientEmail, subject, body, isHtml);
         }

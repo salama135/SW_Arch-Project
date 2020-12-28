@@ -15,7 +15,6 @@ namespace WCF_Service_Host
 
             while (true)
             {
-                Console.WriteLine(DateTime.Now.Hour.ToString());
 
                 if (DateTime.Now.Hour == 2 && resetSend == true)
                 {
@@ -26,6 +25,7 @@ namespace WCF_Service_Host
                 if(send == true)
                 {
                     send = false;
+                    Console.WriteLine(DateTime.Now.Hour.ToString());
 
                     service1Client.SendEmailAsync("ahmedsalamaahmedsayed@gmail.com", "Test mail", "this is a test email from ahmed salama", false);
                 }
