@@ -1,8 +1,13 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
+<<<<<<< HEAD
       "C:\\Users\\sheha\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\sheha\\.nuget\\packages"
+=======
+      "C:\\Users\\zulam\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\zulam\\.nuget\\packages"
+>>>>>>> bac515fa20e55802e16a1ff789964238533bdd6b
     ]
   }
 }

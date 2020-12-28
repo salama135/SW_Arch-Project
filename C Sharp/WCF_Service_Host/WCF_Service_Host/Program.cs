@@ -10,6 +10,18 @@ namespace WCF_Service_Host
         {
             Console.WriteLine("Hello World!");
 
+            
+
+            string senderPassword;
+            string senderEmail;
+
+            Console.WriteLine("Enter Sender Email!");
+            senderEmail = Console.ReadLine();
+
+            Console.WriteLine("Enter Sender Password!");
+            senderPassword = Console.ReadLine();
+
+
             bool send = false;
             bool resetSend = true;
 
@@ -27,14 +39,13 @@ namespace WCF_Service_Host
                     send = false;
                     Console.WriteLine(DateTime.Now.Hour.ToString());
 
-                    service1Client.SendEmailAsync("ahmedsalamaahmedsayed@gmail.com", "Test mail", "this is a test email from ahmed salama", false);
+                    service1Client.SendReminderAsync("Blood Pressure Reminder", "Please meassure your blodd pressure reminder", false, senderEmail, senderPassword);
                 }
 
                 if (DateTime.Now.Hour == 1)
                 {
                     resetSend = true;
                 }
-
             }
         }
     }
