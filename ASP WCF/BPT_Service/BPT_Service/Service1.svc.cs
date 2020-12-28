@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.ServiceModel.Web;
-using System.Text;
 using System.Data.SqlClient;
-
+using System.Net.Mail;
+using System.Net;
 
 namespace BPT_Service
 {
@@ -263,6 +258,53 @@ namespace BPT_Service
             sqlCommand.Parameters.AddWithValue("@h", id);
             sqlCommand.ExecuteNonQuery();
             connection.Close();
+        }
+
+        public string SendEmail(string recipientEmail, string subject, string body, bool isHtml)
+        {
+            bool OK = true;
+
+            try
+            {
+                //Smpt Client Details
+                //gmail >> smtp server : smtp.gmail.com, port : 587 , ssl required
+                //yahoo >> smtp server : smtp.mail.yahoo.com, port : 587 , ssl required
+                SmtpClient clientDetails = new SmtpClient();
+                clientDetails.Port = 587;
+                clientDetails.Host = "smtp.gmail.com";
+                clientDetails.EnableSsl = true;
+                clientDetails.DeliveryMethod = SmtpDeliveryMethod.Network;
+                clientDetails.UseDefaultCredentials = false;
+                clientDetails.Credentials = new NetworkCredential("salamaa135@gmail.com", "thenewpassword4444!");
+
+                //Message Details
+                MailMessage mailDetails = new MailMessage();
+                mailDetails.From = new MailAddress("salamaa135@gmail.com");
+                mailDetails.To.Add(recipientEmail.Trim());
+                //for multiple recipients
+                //mailDetails.To.Add("another recipient email address");
+                //for bcc
+                //mailDetails.Bcc.Add("bcc email address")
+                mailDetails.Subject = subject;
+                mailDetails.IsBodyHtml = isHtml;
+                mailDetails.Body = body;
+
+                clientDetails.Send(mailDetails);
+            }
+            catch (Exception ex)
+            {
+                return ex.Message.ToString();
+            }
+
+            return " ok ";
+        }
+
+        public bool SendReminder(string recipientEmail, string subject, string body, bool isHtml)
+        {
+            bool OK = true;
+
+
+            return OK;
         }
     }
 }

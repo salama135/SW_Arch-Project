@@ -15,10 +15,17 @@ namespace BPT_Service
         // TODO: Add your service operations here
 
         [OperationContract]
-        User SignIn(string email, string password);
+        User SignIn(string email, string password);        
+        
         [OperationContract]
-
         bool Register(string email, string password);
+
+
+        [OperationContract]
+        string SendEmail(string recipientEmail, string subject, string body, bool isHtml);
+
+        [OperationContract]
+        bool SendReminder(string recipientEmail, string subject, string body, bool isHtml);
 
 
         [OperationContract]
