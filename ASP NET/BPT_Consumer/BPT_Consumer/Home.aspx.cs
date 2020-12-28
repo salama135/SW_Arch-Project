@@ -40,10 +40,5 @@ namespace BPT_Consumer
             this.Hidden_cols.Value = jss.Serialize(cols);
             this.Hidden_rows.Value = jss.Serialize(rows);
         }
-
-        protected void TextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

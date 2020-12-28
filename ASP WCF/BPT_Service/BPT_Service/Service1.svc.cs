@@ -2,7 +2,6 @@
 using System.Data.SqlClient;
 using System.Net.Mail;
 using System.Net;
-using System.Collections.Generic;
 
 namespace BPT_Service
 {
@@ -136,6 +135,7 @@ namespace BPT_Service
                     userInfo.name = reader["name"].ToString();
                     userInfo.age = int.Parse(reader["age"].ToString());
                     userInfo.weight = int.Parse(reader["weight"].ToString());
+                    userInfo.height = int.Parse(reader["height"].ToString());
                     userInfo.bloodPressure = int.Parse(reader["bloodPressure"].ToString());
                     userInfo.gender = reader["gender"].ToString();
                 }
@@ -176,13 +176,14 @@ namespace BPT_Service
             if (connection.State == System.Data.ConnectionState.Closed)
                 connection.Open();
 
-            SqlCommand sqlCommand = new SqlCommand("insert into UsersInfo (id, name, gender, age, weight, bloodPressure) VALUES (@a, @b, @c, @d, @e, @f)", connection);
+            SqlCommand sqlCommand = new SqlCommand("insert into UsersInfo (id, name, gender, age, weight, bloodPressure, height) VALUES (@a, @b, @c, @d, @e, @f, @g)", connection);
             sqlCommand.Parameters.AddWithValue("@a", user.id);
             sqlCommand.Parameters.AddWithValue("@b", user.name);
             sqlCommand.Parameters.AddWithValue("@c", user.gender);
             sqlCommand.Parameters.AddWithValue("@d", user.age);
             sqlCommand.Parameters.AddWithValue("@e", user.weight);
             sqlCommand.Parameters.AddWithValue("@f", user.bloodPressure);
+            sqlCommand.Parameters.AddWithValue("@g", user.height);
             sqlCommand.ExecuteNonQuery();
             connection.Close();
 
@@ -218,13 +219,14 @@ namespace BPT_Service
             if (connection.State == System.Data.ConnectionState.Closed)
                 connection.Open();
 
-            SqlCommand sqlCommand = new SqlCommand("update UsersInfo set name=@b, gender=@c, age=@d, weight=@e, bloodPressure=@f where id=@a", connection);
+            SqlCommand sqlCommand = new SqlCommand("update UsersInfo set name=@b, gender=@c, age=@d, weight=@e, bloodPressure=@f height=@g where id=@a", connection);
             sqlCommand.Parameters.AddWithValue("@a", id);
             sqlCommand.Parameters.AddWithValue("@b", user.name);
             sqlCommand.Parameters.AddWithValue("@c", user.gender);
             sqlCommand.Parameters.AddWithValue("@d", user.age);
             sqlCommand.Parameters.AddWithValue("@e", user.weight);
             sqlCommand.Parameters.AddWithValue("@f", user.bloodPressure);
+            sqlCommand.Parameters.AddWithValue("@g", user.height);
             sqlCommand.ExecuteNonQuery();
             connection.Close();
 
@@ -300,34 +302,50 @@ namespace BPT_Service
             return " ok ";
         }
 
-        public bool SendReminder(string recipientEmail, string subject, string body, bool isHtml)
+        public bool SendReminder(string subject, string body, bool isHtml)
         {
             bool OK = true;
 
+            User user = new User();
 
-            return OK;
-        }
-        public List<BloodPressure> GetBloodPressures(int id)
-        {
             if (connection.State == System.Data.ConnectionState.Open)
                 connection.Close();
 
             if (connection.State == System.Data.ConnectionState.Closed)
                 connection.Open();
 
-            List<BloodPressure> bloodPressures = new List<BloodPressure>();
-            SqlCommand sqlCommand = new SqlCommand("select * from Blood_Pressure_Records where id=@h", connection);
-            sqlCommand.Parameters.AddWithValue("@h", id);
-            SqlDataReader reader = sqlCommand.ExecuteReader();
-            while (reader.Read())
+            string email;
+
+            try
             {
-                BloodPressure bloodPressure = new BloodPressure();
-                bloodPressure.Value = int.Parse(reader["Blood_Pressure"].ToString());
-                bloodPressure.Date = reader["Day"].ToString();
-                bloodPressures.Add(bloodPressure);
+                SqlCommand sqlCommand = new SqlCommand("select email from Users", connection);
+                SqlDataReader reader = sqlCommand.ExecuteReader();
+                while (reader.Read())
+                {
+                    email = reader["email"].ToString();
+                    SendEmail(email, "Blood Pressure reminder", "please meassure your blood pressure!", false);
+                }
             }
-            return bloodPressures;
+            catch (Exception ex)
+            {
+                return false;
+            }
+
+            connection.Close();
+
+            return OK;
+        }
+
+        public void AddBP(int BP, int UserID)
+        {
+            connection.Open();
+            SqlCommand sqlCmd = new SqlCommand("insert into Blood_Pressure_Records (id, Blood_Pressure, Day, mTime) values (@i, @b, @d, @t)", connection);
+            sqlCmd.Parameters.AddWithValue("@i", UserID);
+            sqlCmd.Parameters.AddWithValue("@b", BP);
+            sqlCmd.Parameters.AddWithValue("@d", DateTime.Today.ToString("d"));
+            sqlCmd.Parameters.AddWithValue("@t", DateTime.Now.ToShortTimeString());
+            sqlCmd.ExecuteNonQuery();
+            connection.Close();
         }
     }
-
 }

@@ -34,7 +34,6 @@ namespace WCF_Service_Host
                 {
                     resetSend = true;
                 }
-
             }
         }
     }

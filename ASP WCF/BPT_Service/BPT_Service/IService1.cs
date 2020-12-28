@@ -25,7 +25,7 @@ namespace BPT_Service
         string SendEmail(string recipientEmail, string subject, string body, bool isHtml);
 
         [OperationContract]
-        bool SendReminder(string recipientEmail, string subject, string body, bool isHtml);
+        bool SendReminder(string subject, string body, bool isHtml);
 
 
         [OperationContract]
@@ -56,6 +56,6 @@ namespace BPT_Service
         void DeleteUserInfo(int id);
 
         [OperationContract]
-        List<BloodPressure> GetBloodPressures(int id);
+        void AddBP(int BP, int UserID);
     }
 }

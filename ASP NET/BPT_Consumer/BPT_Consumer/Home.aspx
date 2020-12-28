@@ -57,22 +57,29 @@
                 <div class="position-sticky pt-3">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                    <a class="nav-link active" href="#">
+                    <a class="nav-link active"  href="#">
                         <span data-feather="home"></span>
                         Home
                     </a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" runat="server" href="~/UserInfo.aspx">
+                    <a class="nav-link" runat="server" href="UserInfo.aspx">
                         <span data-feather="user"></span>
                         User Info
                     </a>
                     </li>
                 
                     <li class="nav-item">
-                    <a class="nav-link" runat="server" href="~/Diet_Recommendation.aspx">
+                    <a class="nav-link" runat="server" href="Diet_Recommendation.aspx">
                         <span data-feather="heart"></span>
                         Diet Recommendation
+                    </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                    <a class="nav-link" runat="server" href="UpdateBP.aspx">
+                        <span data-feather="bold"></span>
+                        Update Blood Pressure
                     </a>
                     </li>
                 

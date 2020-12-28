@@ -109,6 +109,9 @@ namespace BPT_Consumer.BPT_Service {
         private string genderField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int heightField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int idField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -167,6 +170,19 @@ namespace BPT_Consumer.BPT_Service {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public int height {
+            get {
+                return this.heightField;
+            }
+            set {
+                if ((this.heightField.Equals(value) != true)) {
+                    this.heightField = value;
+                    this.RaisePropertyChanged("height");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public int id {
             get {
                 return this.idField;
@@ -215,67 +231,6 @@ namespace BPT_Consumer.BPT_Service {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BloodPressure", Namespace="http://schemas.datacontract.org/2004/07/BPT_Service")]
-    [System.SerializableAttribute()]
-    public partial class BloodPressure : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int ValueField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Date {
-            get {
-                return this.DateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DateField, value) != true)) {
-                    this.DateField = value;
-                    this.RaisePropertyChanged("Date");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Value {
-            get {
-                return this.ValueField;
-            }
-            set {
-                if ((this.ValueField.Equals(value) != true)) {
-                    this.ValueField = value;
-                    this.RaisePropertyChanged("Value");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BPT_Service.IService1")]
     public interface IService1 {
@@ -299,10 +254,10 @@ namespace BPT_Consumer.BPT_Service {
         System.Threading.Tasks.Task<string> SendEmailAsync(string recipientEmail, string subject, string body, bool isHtml);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SendReminder", ReplyAction="http://tempuri.org/IService1/SendReminderResponse")]
-        bool SendReminder(string recipientEmail, string subject, string body, bool isHtml);
+        bool SendReminder(string subject, string body, bool isHtml);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SendReminder", ReplyAction="http://tempuri.org/IService1/SendReminderResponse")]
-        System.Threading.Tasks.Task<bool> SendReminderAsync(string recipientEmail, string subject, string body, bool isHtml);
+        System.Threading.Tasks.Task<bool> SendReminderAsync(string subject, string body, bool isHtml);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetUserById", ReplyAction="http://tempuri.org/IService1/GetUserByIdResponse")]
         BPT_Consumer.BPT_Service.User GetUserById(int id);
@@ -352,11 +307,11 @@ namespace BPT_Consumer.BPT_Service {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteUserInfo", ReplyAction="http://tempuri.org/IService1/DeleteUserInfoResponse")]
         System.Threading.Tasks.Task DeleteUserInfoAsync(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetBloodPressures", ReplyAction="http://tempuri.org/IService1/GetBloodPressuresResponse")]
-        BPT_Consumer.BPT_Service.BloodPressure[] GetBloodPressures(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddBP", ReplyAction="http://tempuri.org/IService1/AddBPResponse")]
+        void AddBP(int BP, int UserID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetBloodPressures", ReplyAction="http://tempuri.org/IService1/GetBloodPressuresResponse")]
-        System.Threading.Tasks.Task<BPT_Consumer.BPT_Service.BloodPressure[]> GetBloodPressuresAsync(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddBP", ReplyAction="http://tempuri.org/IService1/AddBPResponse")]
+        System.Threading.Tasks.Task AddBPAsync(int BP, int UserID);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -410,12 +365,12 @@ namespace BPT_Consumer.BPT_Service {
             return base.Channel.SendEmailAsync(recipientEmail, subject, body, isHtml);
         }
         
-        public bool SendReminder(string recipientEmail, string subject, string body, bool isHtml) {
-            return base.Channel.SendReminder(recipientEmail, subject, body, isHtml);
+        public bool SendReminder(string subject, string body, bool isHtml) {
+            return base.Channel.SendReminder(subject, body, isHtml);
         }
         
-        public System.Threading.Tasks.Task<bool> SendReminderAsync(string recipientEmail, string subject, string body, bool isHtml) {
-            return base.Channel.SendReminderAsync(recipientEmail, subject, body, isHtml);
+        public System.Threading.Tasks.Task<bool> SendReminderAsync(string subject, string body, bool isHtml) {
+            return base.Channel.SendReminderAsync(subject, body, isHtml);
         }
         
         public BPT_Consumer.BPT_Service.User GetUserById(int id) {
@@ -482,12 +437,12 @@ namespace BPT_Consumer.BPT_Service {
             return base.Channel.DeleteUserInfoAsync(id);
         }
         
-        public BPT_Consumer.BPT_Service.BloodPressure[] GetBloodPressures(int id) {
-            return base.Channel.GetBloodPressures(id);
+        public void AddBP(int BP, int UserID) {
+            base.Channel.AddBP(BP, UserID);
         }
         
-        public System.Threading.Tasks.Task<BPT_Consumer.BPT_Service.BloodPressure[]> GetBloodPressuresAsync(int id) {
-            return base.Channel.GetBloodPressuresAsync(id);
+        public System.Threading.Tasks.Task AddBPAsync(int BP, int UserID) {
+            return base.Channel.AddBPAsync(BP, UserID);
         }
     }
 }
