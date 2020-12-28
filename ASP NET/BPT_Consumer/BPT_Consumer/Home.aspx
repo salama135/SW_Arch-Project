@@ -42,10 +42,12 @@
         <span class="navbar-toggler-icon"></span>
         </button>
       
-        <ul class="navbar-nav px-3">
+        <ul  class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-            <a class="nav-link" href="#">Sign out</a>
-        </li>
+            <form id="form1" runat="server">
+             <asp:Button ID="SignInButton" runat="server" class="w-100 btn btn-sm btn-primary" type="submit" Text ="Sign Out" OnClick="SignOut"></asp:Button>
+        </form>
+          </li>
         </ul>
     </header>
 
@@ -91,10 +93,54 @@
         </div>
     </div>
 
+        <input id="Hidden_rows" type="hidden" runat="server"/>
+        <input id="Hidden_cols" type="hidden" runat="server"/>
 
     <script src="./assets/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
-    <script src="dashboard.js"></script>
+    <script> 
+
+        (function () {
+            'use strict'
+
+            feather.replace()
+
+            // Graphs
+
+            var Rows = JSON.parse(document.getElementById("Hidden_rows").value);
+            var Cols = JSON.parse(document.getElementById("Hidden_cols").value);
+            
+            var ctx = document.getElementById('myChart')
+            var myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: Rows,
+                    datasets: [{
+                        data: Cols,
+                        lineTension: 0,
+                        backgroundColor: 'transparent',
+                        borderColor: '#007bff',
+                        borderWidth: 4,
+                        pointBackgroundColor: '#007bff'
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: false
+                            }
+                        }]
+                    },
+                    legend: {
+                        display: false
+                    }
+                }
+            })
+        })()
+
+    </script>
   </body>
 </html>
+.

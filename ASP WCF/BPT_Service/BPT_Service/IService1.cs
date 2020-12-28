@@ -54,5 +54,8 @@ namespace BPT_Service
 
         [OperationContract]
         void DeleteUserInfo(int id);
+
+        [OperationContract]
+        List<BloodPressure> GetBloodPressures(int id);
     }
 }

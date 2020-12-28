@@ -2,6 +2,7 @@
 using System.Data.SqlClient;
 using System.Net.Mail;
 using System.Net;
+using System.Collections.Generic;
 
 namespace BPT_Service
 {
@@ -306,5 +307,27 @@ namespace BPT_Service
 
             return OK;
         }
+        public List<BloodPressure> GetBloodPressures(int id)
+        {
+            if (connection.State == System.Data.ConnectionState.Open)
+                connection.Close();
+
+            if (connection.State == System.Data.ConnectionState.Closed)
+                connection.Open();
+
+            List<BloodPressure> bloodPressures = new List<BloodPressure>();
+            SqlCommand sqlCommand = new SqlCommand("select * from Blood_Pressure_Records where id=@h", connection);
+            sqlCommand.Parameters.AddWithValue("@h", id);
+            SqlDataReader reader = sqlCommand.ExecuteReader();
+            while (reader.Read())
+            {
+                BloodPressure bloodPressure = new BloodPressure();
+                bloodPressure.Value = int.Parse(reader["Blood_Pressure"].ToString());
+                bloodPressure.Date = reader["Day"].ToString();
+                bloodPressures.Add(bloodPressure);
+            }
+            return bloodPressures;
+        }
     }
+
 }

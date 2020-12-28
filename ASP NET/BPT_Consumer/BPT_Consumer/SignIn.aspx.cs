@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows;
 
 namespace BPT_Consumer
 {
@@ -22,8 +23,11 @@ namespace BPT_Consumer
             {
                 BPT_Service.User user = new BPT_Service.User();
                 BPT_Service.UserInfo userInfo = new BPT_Service.UserInfo();
+
                 
                 user = Global.service.SignIn(email, password);
+
+
 
                 if (user != null)
                 {
@@ -35,12 +39,15 @@ namespace BPT_Consumer
                     return;
                 }
 
-            
-                if(user != null && userInfo != null)
-                {
+
+
+
+                if (user != null && userInfo != null)
+                { 
                     Global.user = user;
                     Global.userInfo = userInfo;
-                    Server.Transfer("Home.aspx", false);
+                    //Server.Transfer("Home.aspx", false);
+                    Response.Redirect("Home.aspx", false);
                 }
 
             }catch(Exception ex)
