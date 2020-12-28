@@ -109,6 +109,9 @@ namespace BPT_Consumer.BPT_Service {
         private string genderField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int heightField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int idField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -162,6 +165,19 @@ namespace BPT_Consumer.BPT_Service {
                 if ((object.ReferenceEquals(this.genderField, value) != true)) {
                     this.genderField = value;
                     this.RaisePropertyChanged("gender");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int height {
+            get {
+                return this.heightField;
+            }
+            set {
+                if ((this.heightField.Equals(value) != true)) {
+                    this.heightField = value;
+                    this.RaisePropertyChanged("height");
                 }
             }
         }

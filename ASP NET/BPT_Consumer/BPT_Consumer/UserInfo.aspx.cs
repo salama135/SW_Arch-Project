@@ -14,6 +14,7 @@ namespace BPT_Consumer
             inputUsername.Value = Global.userInfo.name;
             inputAge.Value = Global.userInfo.age.ToString();
             inputWeight.Value = Global.userInfo.weight.ToString();
+            inputHeight.Value = Global.userInfo.height.ToString();
 
             inputEmail.Value = Global.user.email;
             inputPassword.Value = Global.user.password;
@@ -21,8 +22,12 @@ namespace BPT_Consumer
             if (Global.userInfo.gender == "Male")
                 inputMale.Checked = true;
             else
+                inputMale.Checked = false;
+                
             if (Global.userInfo.gender == "Female")
                 inputFemale.Checked = true;
+            else
+                inputFemale.Checked = false;
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -36,6 +41,7 @@ namespace BPT_Consumer
             userInfo.name = String.Format("{0}", Request.Form["inputUsername"]);
             userInfo.age = int.Parse(String.Format("{0}", Request.Form["inputAge"]));
             userInfo.weight = int.Parse(String.Format("{0}", Request.Form["inputWeight"]));
+            userInfo.weight = int.Parse(String.Format("{0}", Request.Form["inputHeight"]));
 
             if (inputMale.Checked)
                 userInfo.gender = "Male";
