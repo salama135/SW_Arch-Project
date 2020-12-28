@@ -22,7 +22,11 @@
         -moz-user-select: none;
         user-select: none;
       }
+          .google {
+              margin-top:20px;
+              background-color:red;
 
+          }
       @media (min-width: 768px) {
         .bd-placeholder-img-lg {
           font-size: 3.5rem;
@@ -41,13 +45,15 @@
             <img class="mb-4" src="./assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"/>
             <h1 class="h3 mb-3 fw-normal">Please Register</h1>
             <label for="inputEmail" class="visually-hidden">Email address</label>
-            <input runat="server" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus/>
+            <input runat="server" type="email" id="inputEmail" class="form-control" placeholder="Email address"  autofocus/>
             <label for="inputPassword" class="visually-hidden">Password</label>
-            <input runat="server" type="password" id="inputPassword" class="form-control" placeholder="Password" required/>
+            <input runat="server" type="password" id="inputPassword" class="form-control" placeholder="Password" />
             <label for="inputConfirmPassword" class="visually-hidden">Confirm Password</label>
-            <input runat="server" type="password" id="inputConfirmPassword" class="form-control" placeholder="Confirm Password" required/>
+            <input runat="server" type="password" id="inputConfirmPassword" class="form-control" placeholder="Confirm Password" />
 
+           
             <asp:Button ID="RegisterButton" runat="server" class="w-100 btn btn-lg btn-primary" type="submit" Text ="Register in" OnClick="RegisterButton_Click"></asp:Button>
+              <asp:Button ID="googleSignIn" runat="server" class="w-100 btn btn-lg google" type="submit" Text ="Sign up With Google" OnClick="SignUpGoogle_Click"></asp:Button>
             <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
         </form>
         <div runat="server" id="AlertBox" class="alert alert-danger" role="alert" visible="false">
