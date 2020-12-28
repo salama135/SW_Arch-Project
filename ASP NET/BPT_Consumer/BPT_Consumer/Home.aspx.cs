@@ -13,10 +13,5 @@ namespace BPT_Consumer
         {
 
         }
-
-        protected void TextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
