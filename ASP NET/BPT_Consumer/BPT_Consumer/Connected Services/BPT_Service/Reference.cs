@@ -231,6 +231,67 @@ namespace BPT_Consumer.BPT_Service {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BloodPressure", Namespace="http://schemas.datacontract.org/2004/07/BPT_Service")]
+    [System.SerializableAttribute()]
+    public partial class BloodPressure : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ValueField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Date {
+            get {
+                return this.DateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DateField, value) != true)) {
+                    this.DateField = value;
+                    this.RaisePropertyChanged("Date");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Value {
+            get {
+                return this.ValueField;
+            }
+            set {
+                if ((this.ValueField.Equals(value) != true)) {
+                    this.ValueField = value;
+                    this.RaisePropertyChanged("Value");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BPT_Service.IService1")]
     public interface IService1 {
@@ -300,6 +361,12 @@ namespace BPT_Consumer.BPT_Service {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteUser", ReplyAction="http://tempuri.org/IService1/DeleteUserResponse")]
         System.Threading.Tasks.Task DeleteUserAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetBloodPressures", ReplyAction="http://tempuri.org/IService1/GetBloodPressuresResponse")]
+        BPT_Consumer.BPT_Service.BloodPressure[] GetBloodPressures(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetBloodPressures", ReplyAction="http://tempuri.org/IService1/GetBloodPressuresResponse")]
+        System.Threading.Tasks.Task<BPT_Consumer.BPT_Service.BloodPressure[]> GetBloodPressuresAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteUserInfo", ReplyAction="http://tempuri.org/IService1/DeleteUserInfoResponse")]
         void DeleteUserInfo(int id);
@@ -427,6 +494,14 @@ namespace BPT_Consumer.BPT_Service {
         
         public System.Threading.Tasks.Task DeleteUserAsync(int id) {
             return base.Channel.DeleteUserAsync(id);
+        }
+        
+        public BPT_Consumer.BPT_Service.BloodPressure[] GetBloodPressures(int id) {
+            return base.Channel.GetBloodPressures(id);
+        }
+        
+        public System.Threading.Tasks.Task<BPT_Consumer.BPT_Service.BloodPressure[]> GetBloodPressuresAsync(int id) {
+            return base.Channel.GetBloodPressuresAsync(id);
         }
         
         public void DeleteUserInfo(int id) {
