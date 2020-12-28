@@ -2,7 +2,6 @@
 using System.Data.SqlClient;
 using System.Net.Mail;
 using System.Net;
-using System.Collections.Generic;
 
 namespace BPT_Service
 {
@@ -261,7 +260,7 @@ namespace BPT_Service
             connection.Close();
         }
 
-        public string SendEmail(string recipientEmail, string subject, string body, bool isHtml, string senderEmail, string senderPassword)
+        public string SendEmail(string recipientEmail, string subject, string body, bool isHtml)
         {
             bool OK = true;
 
@@ -276,7 +275,7 @@ namespace BPT_Service
                 clientDetails.EnableSsl = true;
                 clientDetails.DeliveryMethod = SmtpDeliveryMethod.Network;
                 clientDetails.UseDefaultCredentials = false;
-                clientDetails.Credentials = new NetworkCredential(senderEmail, senderPassword);
+                clientDetails.Credentials = new NetworkCredential("salamaa135@gmail.com", "thenewpassword4444!");
 
                 //Message Details
                 MailMessage mailDetails = new MailMessage();
@@ -300,78 +299,12 @@ namespace BPT_Service
             return " ok ";
         }
 
-        public bool SendReminder(string subject, string body, bool isHtml, string senderEmail, string senderPassword)
+        public bool SendReminder(string recipientEmail, string subject, string body, bool isHtml)
         {
             bool OK = true;
 
-            User user = new User();
-
-            if (connection.State == System.Data.ConnectionState.Open)
-                connection.Close();
-
-            if (connection.State == System.Data.ConnectionState.Closed)
-                connection.Open();
-
-            string email;
-
-            try
-            {
-                SqlCommand sqlCommand = new SqlCommand("select email from Users", connection);
-                SqlDataReader reader = sqlCommand.ExecuteReader();
-                while (reader.Read())
-                {
-                    email = reader["email"].ToString();
-                    SendEmail(email, subject, body, false, senderEmail, senderPassword);
-                }
-            }
-            catch (Exception ex)
-            {
-                return false;
-            }
-
-            connection.Close();
 
             return OK;
         }
-
-        public void AddBP(int BP, int UserID)
-        {
-            if (connection.State == System.Data.ConnectionState.Open)
-                connection.Close();
-
-            if (connection.State == System.Data.ConnectionState.Closed)
-                connection.Open();
-
-            SqlCommand sqlCmd = new SqlCommand("insert into Blood_Pressure_Records (id, Blood_Pressure, Day, mTime) values (@i, @b, @d, @t)", connection);
-            sqlCmd.Parameters.AddWithValue("@i", UserID);
-            sqlCmd.Parameters.AddWithValue("@b", BP);
-            sqlCmd.Parameters.AddWithValue("@d", DateTime.Today.ToString("d"));
-            sqlCmd.Parameters.AddWithValue("@t", DateTime.Now.ToShortTimeString());
-            sqlCmd.ExecuteNonQuery();
-            connection.Close();
-        }
-        
-        public List<BloodPressure> GetBloodPressures(int id)
-        {
-            if (connection.State == System.Data.ConnectionState.Open)
-                connection.Close();
-
-            if (connection.State == System.Data.ConnectionState.Closed)
-                connection.Open();
-
-            List<BloodPressure> bloodPressures = new List<BloodPressure>();
-            SqlCommand sqlCommand = new SqlCommand("select * from Blood_Pressure_Records where id=@h", connection);
-            sqlCommand.Parameters.AddWithValue("@h", id);
-            SqlDataReader reader = sqlCommand.ExecuteReader();
-            while (reader.Read())
-            {
-                BloodPressure bloodPressure = new BloodPressure();
-                bloodPressure.Value = int.Parse(reader["Blood_Pressure"].ToString());
-                bloodPressure.Date = reader["Day"].ToString();
-                bloodPressures.Add(bloodPressure);
-            }
-            return bloodPressures;
-        }
     }
-
 }

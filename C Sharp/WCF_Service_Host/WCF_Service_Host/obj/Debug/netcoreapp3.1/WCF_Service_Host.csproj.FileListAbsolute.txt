@@ -22,7 +22,6 @@ D:\4th Year\Software Design and Architecture\Project\SW_Arch-Project\C Sharp\WCF
 D:\4th Year\Software Design and Architecture\Project\SW_Arch-Project\C Sharp\WCF_Service_Host\WCF_Service_Host\obj\Debug\netcoreapp3.1\WCF_Service_Host.dll
 D:\4th Year\Software Design and Architecture\Project\SW_Arch-Project\C Sharp\WCF_Service_Host\WCF_Service_Host\obj\Debug\netcoreapp3.1\WCF_Service_Host.pdb
 D:\4th Year\Software Design and Architecture\Project\SW_Arch-Project\C Sharp\WCF_Service_Host\WCF_Service_Host\obj\Debug\netcoreapp3.1\WCF_Service_Host.genruntimeconfig.cache
-<<<<<<< HEAD
 D:\gam3a\archiProject\SW_Arch-Project\C Sharp\WCF_Service_Host\WCF_Service_Host\bin\Debug\netcoreapp3.1\WCF_Service_Host.exe
 D:\gam3a\archiProject\SW_Arch-Project\C Sharp\WCF_Service_Host\WCF_Service_Host\bin\Debug\netcoreapp3.1\WCF_Service_Host.deps.json
 D:\gam3a\archiProject\SW_Arch-Project\C Sharp\WCF_Service_Host\WCF_Service_Host\bin\Debug\netcoreapp3.1\WCF_Service_Host.runtimeconfig.json
@@ -47,29 +46,3 @@ D:\gam3a\archiProject\SW_Arch-Project\C Sharp\WCF_Service_Host\WCF_Service_Host\
 D:\gam3a\archiProject\SW_Arch-Project\C Sharp\WCF_Service_Host\WCF_Service_Host\obj\Debug\netcoreapp3.1\WCF_Service_Host.dll
 D:\gam3a\archiProject\SW_Arch-Project\C Sharp\WCF_Service_Host\WCF_Service_Host\obj\Debug\netcoreapp3.1\WCF_Service_Host.pdb
 D:\gam3a\archiProject\SW_Arch-Project\C Sharp\WCF_Service_Host\WCF_Service_Host\obj\Debug\netcoreapp3.1\WCF_Service_Host.genruntimeconfig.cache
-=======
-G:\sw-archi\SW_Arch-Project\C Sharp\WCF_Service_Host\WCF_Service_Host\bin\Debug\netcoreapp3.1\WCF_Service_Host.exe
-G:\sw-archi\SW_Arch-Project\C Sharp\WCF_Service_Host\WCF_Service_Host\bin\Debug\netcoreapp3.1\WCF_Service_Host.deps.json
-G:\sw-archi\SW_Arch-Project\C Sharp\WCF_Service_Host\WCF_Service_Host\bin\Debug\netcoreapp3.1\WCF_Service_Host.runtimeconfig.json
-G:\sw-archi\SW_Arch-Project\C Sharp\WCF_Service_Host\WCF_Service_Host\bin\Debug\netcoreapp3.1\WCF_Service_Host.runtimeconfig.dev.json
-G:\sw-archi\SW_Arch-Project\C Sharp\WCF_Service_Host\WCF_Service_Host\bin\Debug\netcoreapp3.1\WCF_Service_Host.dll
-G:\sw-archi\SW_Arch-Project\C Sharp\WCF_Service_Host\WCF_Service_Host\bin\Debug\netcoreapp3.1\WCF_Service_Host.pdb
-G:\sw-archi\SW_Arch-Project\C Sharp\WCF_Service_Host\WCF_Service_Host\bin\Debug\netcoreapp3.1\System.Net.Http.WinHttpHandler.dll
-G:\sw-archi\SW_Arch-Project\C Sharp\WCF_Service_Host\WCF_Service_Host\bin\Debug\netcoreapp3.1\System.ServiceModel.Duplex.dll
-G:\sw-archi\SW_Arch-Project\C Sharp\WCF_Service_Host\WCF_Service_Host\bin\Debug\netcoreapp3.1\System.ServiceModel.Http.dll
-G:\sw-archi\SW_Arch-Project\C Sharp\WCF_Service_Host\WCF_Service_Host\bin\Debug\netcoreapp3.1\System.ServiceModel.NetTcp.dll
-G:\sw-archi\SW_Arch-Project\C Sharp\WCF_Service_Host\WCF_Service_Host\bin\Debug\netcoreapp3.1\System.ServiceModel.Primitives.dll
-G:\sw-archi\SW_Arch-Project\C Sharp\WCF_Service_Host\WCF_Service_Host\bin\Debug\netcoreapp3.1\System.ServiceModel.dll
-G:\sw-archi\SW_Arch-Project\C Sharp\WCF_Service_Host\WCF_Service_Host\bin\Debug\netcoreapp3.1\System.ServiceModel.Security.dll
-G:\sw-archi\SW_Arch-Project\C Sharp\WCF_Service_Host\WCF_Service_Host\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Net.Http.WinHttpHandler.dll
-G:\sw-archi\SW_Arch-Project\C Sharp\WCF_Service_Host\WCF_Service_Host\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netstandard2.0\System.Private.ServiceModel.dll
-G:\sw-archi\SW_Arch-Project\C Sharp\WCF_Service_Host\WCF_Service_Host\bin\Debug\netcoreapp3.1\runtimes\win7\lib\netstandard2.0\System.Private.ServiceModel.dll
-G:\sw-archi\SW_Arch-Project\C Sharp\WCF_Service_Host\WCF_Service_Host\obj\Debug\netcoreapp3.1\WCF_Service_Host.csprojAssemblyReference.cache
-G:\sw-archi\SW_Arch-Project\C Sharp\WCF_Service_Host\WCF_Service_Host\obj\Debug\netcoreapp3.1\WCF_Service_Host.csproj.CoreCompileInputs.cache
-G:\sw-archi\SW_Arch-Project\C Sharp\WCF_Service_Host\WCF_Service_Host\obj\Debug\netcoreapp3.1\WCF_Service_Host.AssemblyInfoInputs.cache
-G:\sw-archi\SW_Arch-Project\C Sharp\WCF_Service_Host\WCF_Service_Host\obj\Debug\netcoreapp3.1\WCF_Service_Host.AssemblyInfo.cs
-G:\sw-archi\SW_Arch-Project\C Sharp\WCF_Service_Host\WCF_Service_Host\obj\Debug\netcoreapp3.1\WCF_Service_Host.csproj.CopyComplete
-G:\sw-archi\SW_Arch-Project\C Sharp\WCF_Service_Host\WCF_Service_Host\obj\Debug\netcoreapp3.1\WCF_Service_Host.dll
-G:\sw-archi\SW_Arch-Project\C Sharp\WCF_Service_Host\WCF_Service_Host\obj\Debug\netcoreapp3.1\WCF_Service_Host.pdb
-G:\sw-archi\SW_Arch-Project\C Sharp\WCF_Service_Host\WCF_Service_Host\obj\Debug\netcoreapp3.1\WCF_Service_Host.genruntimeconfig.cache
->>>>>>> bac515fa20e55802e16a1ff789964238533bdd6b

@@ -76,7 +76,7 @@ namespace BPT_Consumer
                 userInfo = Global.service.CreateUserInfo(userInfo);
                 Global.userInfo = userInfo;
 
-                Server.Transfer("SignIn.aspx", false);
+                Server.Transfer("Home.aspx", false);
             }
             catch (Exception ex)
             {

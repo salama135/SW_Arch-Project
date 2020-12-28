@@ -42,11 +42,9 @@
         <span class="navbar-toggler-icon"></span>
         </button>
       
-        <ul  class="navbar-nav px-3">
+        <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-            <form id="form1" runat="server">
-                <asp:Button ID="SignOutButton" runat="server" class="w-100 btn btn-sm btn-primary" type="submit" Text ="Sign Out" OnClick="SignOut"></asp:Button>
-            </form>
+            <a class="nav-link" href="#">Sign out</a>
         </li>
         </ul>
     </header>
@@ -57,29 +55,22 @@
                 <div class="position-sticky pt-3">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                    <a class="nav-link active"  href="#">
+                    <a class="nav-link active" href="#">
                         <span data-feather="home"></span>
                         Home
                     </a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" runat="server" href="UserInfo.aspx">
+                    <a class="nav-link" runat="server" href="~/UserInfo.aspx">
                         <span data-feather="user"></span>
                         User Info
                     </a>
                     </li>
                 
                     <li class="nav-item">
-                    <a class="nav-link" runat="server" href="Diet_Recommendation.aspx">
+                    <a class="nav-link" runat="server" href="~/Diet_Recommendation.aspx">
                         <span data-feather="heart"></span>
                         Diet Recommendation
-                    </a>
-                    </li>
-                    
-                    <li class="nav-item">
-                    <a class="nav-link" runat="server" href="UpdateBP.aspx">
-                        <span data-feather="bold"></span>
-                        Update Blood Pressure
                     </a>
                     </li>
                 
@@ -102,54 +93,10 @@
         </div>
     </div>
 
-        <input id="Hidden_rows" type="hidden" runat="server"/>
-        <input id="Hidden_cols" type="hidden" runat="server"/>
 
     <script src="./assets/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
-    <script> 
-
-        (function () {
-            'use strict'
-
-            feather.replace()
-
-            // Graphs
-
-            var Rows = JSON.parse(document.getElementById("Hidden_rows").value);
-            var Cols = JSON.parse(document.getElementById("Hidden_cols").value);
-            
-            var ctx = document.getElementById('myChart')
-            var myChart = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: Rows,
-                    datasets: [{
-                        data: Cols,
-                        lineTension: 0,
-                        backgroundColor: 'transparent',
-                        borderColor: '#007bff',
-                        borderWidth: 4,
-                        pointBackgroundColor: '#007bff'
-                    }]
-                },
-                options: {
-                    scales: {
-                        yAxes: [{
-                            ticks: {
-                                beginAtZero: false
-                            }
-                        }]
-                    },
-                    legend: {
-                        display: false
-                    }
-                }
-            })
-        })()
-
-    </script>
+    <script src="dashboard.js"></script>
   </body>
 </html>
-.

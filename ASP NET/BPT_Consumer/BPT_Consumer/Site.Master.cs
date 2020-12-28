@@ -11,7 +11,7 @@ namespace BPT_Consumer
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
     }
 }

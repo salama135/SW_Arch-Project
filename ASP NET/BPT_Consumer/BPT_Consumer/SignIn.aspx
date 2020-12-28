@@ -58,7 +58,7 @@
         <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
       </form>
         <div runat="server" id="AlertBox" class="alert alert-danger" role="alert" visible="false">
-            Something went wrong please check the email and password !
+            Something when wrong please check the email and password !
         </div>
     </main>   
   </body>
