@@ -15,6 +15,20 @@ namespace BPT_Consumer
 
         }
 
+        protected void SignInGoogle_Click(object sender, EventArgs e)
+        {
+
+            googleUser.login = true;
+            string clientid = "497837756181-9pc27o2lso0jv5a782611ij4qadmfj7v.apps.googleusercontent.com";
+            string clientsecret = "sMuPu_q3gBhT8JTXJ7jMelog";
+            string redirection_url = "https://localhost:44304/Home";
+            string url = "https://accounts.google.com/o/oauth2/v2/auth?scope=profile&include_granted_scopes=true&redirect_uri=" + redirection_url + "&response_type=code&client_id=" + clientid + "";
+            Response.Redirect(url);
+
+           
+
+        }
+
         protected void SignInButton_Click(object sender, EventArgs e)
         {
             string email = inputEmail.Value;

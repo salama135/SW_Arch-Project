@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\4th Year\\Software Design and Architecture\\Project\\SW_Arch-Project\\C Sharp\\WCF_Service_Host\\WCF_Service_Host\\WCF_Service_Host.csproj": {}
+    "D:\\gam3a\\archiProject\\SW_Arch-Project\\C Sharp\\WCF_Service_Host\\WCF_Service_Host\\WCF_Service_Host.csproj": {}
   },
   "projects": {
-    "D:\\4th Year\\Software Design and Architecture\\Project\\SW_Arch-Project\\C Sharp\\WCF_Service_Host\\WCF_Service_Host\\WCF_Service_Host.csproj": {
+    "D:\\gam3a\\archiProject\\SW_Arch-Project\\C Sharp\\WCF_Service_Host\\WCF_Service_Host\\WCF_Service_Host.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\4th Year\\Software Design and Architecture\\Project\\SW_Arch-Project\\C Sharp\\WCF_Service_Host\\WCF_Service_Host\\WCF_Service_Host.csproj",
+        "projectUniqueName": "D:\\gam3a\\archiProject\\SW_Arch-Project\\C Sharp\\WCF_Service_Host\\WCF_Service_Host\\WCF_Service_Host.csproj",
         "projectName": "WCF_Service_Host",
-        "projectPath": "D:\\4th Year\\Software Design and Architecture\\Project\\SW_Arch-Project\\C Sharp\\WCF_Service_Host\\WCF_Service_Host\\WCF_Service_Host.csproj",
-        "packagesPath": "C:\\Users\\Ahmed Salama\\.nuget\\packages\\",
-        "outputPath": "D:\\4th Year\\Software Design and Architecture\\Project\\SW_Arch-Project\\C Sharp\\WCF_Service_Host\\WCF_Service_Host\\obj\\",
+        "projectPath": "D:\\gam3a\\archiProject\\SW_Arch-Project\\C Sharp\\WCF_Service_Host\\WCF_Service_Host\\WCF_Service_Host.csproj",
+        "packagesPath": "C:\\Users\\sheha\\.nuget\\packages\\",
+        "outputPath": "D:\\gam3a\\archiProject\\SW_Arch-Project\\C Sharp\\WCF_Service_Host\\WCF_Service_Host\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Ahmed Salama\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sheha\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,6 +26,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -37,6 +38,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "System.ServiceModel.Duplex": {
               "target": "Package",
@@ -70,7 +72,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

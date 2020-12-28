@@ -315,10 +315,17 @@ namespace BPT_Consumer.BPT_Service {
         System.Threading.Tasks.Task<string> SendEmailAsync(string recipientEmail, string subject, string body, bool isHtml);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SendReminder", ReplyAction="http://tempuri.org/IService1/SendReminderResponse")]
+<<<<<<< HEAD
+        bool SendReminder(string recipientEmail, string subject, string body, bool isHtml);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SendReminder", ReplyAction="http://tempuri.org/IService1/SendReminderResponse")]
+        System.Threading.Tasks.Task<bool> SendReminderAsync(string recipientEmail, string subject, string body, bool isHtml);
+=======
         bool SendReminder(string subject, string body, bool isHtml);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SendReminder", ReplyAction="http://tempuri.org/IService1/SendReminderResponse")]
         System.Threading.Tasks.Task<bool> SendReminderAsync(string subject, string body, bool isHtml);
+>>>>>>> bac515fa20e55802e16a1ff789964238533bdd6b
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetUserById", ReplyAction="http://tempuri.org/IService1/GetUserByIdResponse")]
         BPT_Consumer.BPT_Service.User GetUserById(int id);
@@ -432,12 +439,21 @@ namespace BPT_Consumer.BPT_Service {
             return base.Channel.SendEmailAsync(recipientEmail, subject, body, isHtml);
         }
         
+<<<<<<< HEAD
+        public bool SendReminder(string recipientEmail, string subject, string body, bool isHtml) {
+            return base.Channel.SendReminder(recipientEmail, subject, body, isHtml);
+        }
+        
+        public System.Threading.Tasks.Task<bool> SendReminderAsync(string recipientEmail, string subject, string body, bool isHtml) {
+            return base.Channel.SendReminderAsync(recipientEmail, subject, body, isHtml);
+=======
         public bool SendReminder(string subject, string body, bool isHtml) {
             return base.Channel.SendReminder(subject, body, isHtml);
         }
         
         public System.Threading.Tasks.Task<bool> SendReminderAsync(string subject, string body, bool isHtml) {
             return base.Channel.SendReminderAsync(subject, body, isHtml);
+>>>>>>> bac515fa20e55802e16a1ff789964238533bdd6b
         }
         
         public BPT_Consumer.BPT_Service.User GetUserById(int id) {

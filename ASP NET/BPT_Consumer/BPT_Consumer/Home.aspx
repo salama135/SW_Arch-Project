@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="BPT_Consumer.Home" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="BPT_Consumer.Home"    %>
 
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -97,6 +97,8 @@
                 <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
 
             </main>
+
+       
         </div>
     </div>
 

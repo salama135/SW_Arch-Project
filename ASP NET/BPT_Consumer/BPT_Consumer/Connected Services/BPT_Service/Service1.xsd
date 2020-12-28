@@ -51,6 +51,10 @@
   <xs:element name="SendReminder">
     <xs:complexType>
       <xs:sequence>
+<<<<<<< HEAD
+        <xs:element minOccurs="0" name="recipientEmail" nillable="true" type="xs:string" />
+=======
+>>>>>>> bac515fa20e55802e16a1ff789964238533bdd6b
         <xs:element minOccurs="0" name="subject" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="body" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="isHtml" type="xs:boolean" />
