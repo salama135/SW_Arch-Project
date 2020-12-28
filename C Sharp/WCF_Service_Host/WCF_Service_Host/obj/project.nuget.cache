@@ -1,19 +1,19 @@
 {
   "version": 2,
-  "dgSpecHash": "Q7AETv+W3Y+xZrxOCnTl96VDvTHpHf4YOg48L2kVS0KZz/kJMEo2g0DRPrEq782vZfPP/WYL8qx3GmrvC1TEDQ==",
+  "dgSpecHash": "3J3E7viN8hTApKPvY+yssEEqzmjpFTHT4rHDcn2NCx8TyHqPDXF213LgqI8MBEsICJ2208HrtUc8lbX4tXDIAA==",
   "success": true,
-  "projectFilePath": "G:\\sw-archi\\SW_Arch-Project\\C Sharp\\WCF_Service_Host\\WCF_Service_Host\\WCF_Service_Host.csproj",
+  "projectFilePath": "D:\\4th Year\\Software Design and Architecture\\Project\\SW_Arch-Project\\C Sharp\\WCF_Service_Host\\WCF_Service_Host\\WCF_Service_Host.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\zulam\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
-    "C:\\Users\\zulam\\.nuget\\packages\\system.net.http.winhttphandler\\4.4.0\\system.net.http.winhttphandler.4.4.0.nupkg.sha512",
-    "C:\\Users\\zulam\\.nuget\\packages\\system.private.servicemodel\\4.4.4\\system.private.servicemodel.4.4.4.nupkg.sha512",
-    "C:\\Users\\zulam\\.nuget\\packages\\system.reflection.dispatchproxy\\4.4.0\\system.reflection.dispatchproxy.4.4.0.nupkg.sha512",
-    "C:\\Users\\zulam\\.nuget\\packages\\system.security.principal.windows\\4.4.0\\system.security.principal.windows.4.4.0.nupkg.sha512",
-    "C:\\Users\\zulam\\.nuget\\packages\\system.servicemodel.duplex\\4.4.4\\system.servicemodel.duplex.4.4.4.nupkg.sha512",
-    "C:\\Users\\zulam\\.nuget\\packages\\system.servicemodel.http\\4.4.4\\system.servicemodel.http.4.4.4.nupkg.sha512",
-    "C:\\Users\\zulam\\.nuget\\packages\\system.servicemodel.nettcp\\4.4.4\\system.servicemodel.nettcp.4.4.4.nupkg.sha512",
-    "C:\\Users\\zulam\\.nuget\\packages\\system.servicemodel.primitives\\4.4.4\\system.servicemodel.primitives.4.4.4.nupkg.sha512",
-    "C:\\Users\\zulam\\.nuget\\packages\\system.servicemodel.security\\4.4.4\\system.servicemodel.security.4.4.4.nupkg.sha512"
+    "C:\\Users\\Ahmed Salama\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
+    "C:\\Users\\Ahmed Salama\\.nuget\\packages\\system.net.http.winhttphandler\\4.4.0\\system.net.http.winhttphandler.4.4.0.nupkg.sha512",
+    "C:\\Users\\Ahmed Salama\\.nuget\\packages\\system.private.servicemodel\\4.4.4\\system.private.servicemodel.4.4.4.nupkg.sha512",
+    "C:\\Users\\Ahmed Salama\\.nuget\\packages\\system.reflection.dispatchproxy\\4.4.0\\system.reflection.dispatchproxy.4.4.0.nupkg.sha512",
+    "C:\\Users\\Ahmed Salama\\.nuget\\packages\\system.security.principal.windows\\4.4.0\\system.security.principal.windows.4.4.0.nupkg.sha512",
+    "C:\\Users\\Ahmed Salama\\.nuget\\packages\\system.servicemodel.duplex\\4.4.4\\system.servicemodel.duplex.4.4.4.nupkg.sha512",
+    "C:\\Users\\Ahmed Salama\\.nuget\\packages\\system.servicemodel.http\\4.4.4\\system.servicemodel.http.4.4.4.nupkg.sha512",
+    "C:\\Users\\Ahmed Salama\\.nuget\\packages\\system.servicemodel.nettcp\\4.4.4\\system.servicemodel.nettcp.4.4.4.nupkg.sha512",
+    "C:\\Users\\Ahmed Salama\\.nuget\\packages\\system.servicemodel.primitives\\4.4.4\\system.servicemodel.primitives.4.4.4.nupkg.sha512",
+    "C:\\Users\\Ahmed Salama\\.nuget\\packages\\system.servicemodel.security\\4.4.4\\system.servicemodel.security.4.4.4.nupkg.sha512"
   ],
   "logs": []
 }

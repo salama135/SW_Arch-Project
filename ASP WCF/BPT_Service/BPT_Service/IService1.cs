@@ -22,10 +22,10 @@ namespace BPT_Service
 
 
         [OperationContract]
-        string SendEmail(string recipientEmail, string subject, string body, bool isHtml);
+        string SendEmail(string recipientEmail, string subject, string body, bool isHtml, string senderEmail, string senderPassword);
 
         [OperationContract]
-        bool SendReminder(string subject, string body, bool isHtml);
+        bool SendReminder(string subject, string body, bool isHtml, string senderEmail, string senderPassword);
 
 
         [OperationContract]

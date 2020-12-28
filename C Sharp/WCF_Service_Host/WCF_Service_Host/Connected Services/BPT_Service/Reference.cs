@@ -76,6 +76,8 @@ namespace BPT_Service
         
         private string genderField;
         
+        private int heightField;
+        
         private int idField;
         
         private string nameField;
@@ -122,6 +124,19 @@ namespace BPT_Service
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public int height
+        {
+            get
+            {
+                return this.heightField;
+            }
+            set
+            {
+                this.heightField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public int id
         {
             get
@@ -161,6 +176,43 @@ namespace BPT_Service
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BloodPressure", Namespace="http://schemas.datacontract.org/2004/07/BPT_Service")]
+    public partial class BloodPressure : object
+    {
+        
+        private string DateField;
+        
+        private int ValueField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Date
+        {
+            get
+            {
+                return this.DateField;
+            }
+            set
+            {
+                this.DateField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Value
+        {
+            get
+            {
+                return this.ValueField;
+            }
+            set
+            {
+                this.ValueField = value;
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BPT_Service.IService1")]
     public interface IService1
@@ -173,10 +225,10 @@ namespace BPT_Service
         System.Threading.Tasks.Task<bool> RegisterAsync(string email, string password);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SendEmail", ReplyAction="http://tempuri.org/IService1/SendEmailResponse")]
-        System.Threading.Tasks.Task<string> SendEmailAsync(string recipientEmail, string subject, string body, bool isHtml);
+        System.Threading.Tasks.Task<string> SendEmailAsync(string recipientEmail, string subject, string body, bool isHtml, string senderEmail, string senderPassword);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SendReminder", ReplyAction="http://tempuri.org/IService1/SendReminderResponse")]
-        System.Threading.Tasks.Task<bool> SendReminderAsync(string subject, string body, bool isHtml);
+        System.Threading.Tasks.Task<bool> SendReminderAsync(string subject, string body, bool isHtml, string senderEmail, string senderPassword);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetUserById", ReplyAction="http://tempuri.org/IService1/GetUserByIdResponse")]
         System.Threading.Tasks.Task<BPT_Service.User> GetUserByIdAsync(int id);
@@ -201,6 +253,12 @@ namespace BPT_Service
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteUserInfo", ReplyAction="http://tempuri.org/IService1/DeleteUserInfoResponse")]
         System.Threading.Tasks.Task DeleteUserInfoAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddBP", ReplyAction="http://tempuri.org/IService1/AddBPResponse")]
+        System.Threading.Tasks.Task AddBPAsync(int BP, int UserID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetBloodPressures", ReplyAction="http://tempuri.org/IService1/GetBloodPressuresResponse")]
+        System.Threading.Tasks.Task<BPT_Service.BloodPressure[]> GetBloodPressuresAsync(int id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
@@ -263,14 +321,14 @@ namespace BPT_Service
             return base.Channel.RegisterAsync(email, password);
         }
         
-        public System.Threading.Tasks.Task<string> SendEmailAsync(string recipientEmail, string subject, string body, bool isHtml)
+        public System.Threading.Tasks.Task<string> SendEmailAsync(string recipientEmail, string subject, string body, bool isHtml, string senderEmail, string senderPassword)
         {
-            return base.Channel.SendEmailAsync(recipientEmail, subject, body, isHtml);
+            return base.Channel.SendEmailAsync(recipientEmail, subject, body, isHtml, senderEmail, senderPassword);
         }
         
-        public System.Threading.Tasks.Task<bool> SendReminderAsync(string subject, string body, bool isHtml)
+        public System.Threading.Tasks.Task<bool> SendReminderAsync(string subject, string body, bool isHtml, string senderEmail, string senderPassword)
         {
-            return base.Channel.SendReminderAsync(subject, body, isHtml);
+            return base.Channel.SendReminderAsync(subject, body, isHtml, senderEmail, senderPassword);
         }
         
         public System.Threading.Tasks.Task<BPT_Service.User> GetUserByIdAsync(int id)
@@ -311,6 +369,16 @@ namespace BPT_Service
         public System.Threading.Tasks.Task DeleteUserInfoAsync(int id)
         {
             return base.Channel.DeleteUserInfoAsync(id);
+        }
+        
+        public System.Threading.Tasks.Task AddBPAsync(int BP, int UserID)
+        {
+            return base.Channel.AddBPAsync(BP, UserID);
+        }
+        
+        public System.Threading.Tasks.Task<BPT_Service.BloodPressure[]> GetBloodPressuresAsync(int id)
+        {
+            return base.Channel.GetBloodPressuresAsync(id);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()

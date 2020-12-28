@@ -261,7 +261,7 @@ namespace BPT_Service
             connection.Close();
         }
 
-        public string SendEmail(string recipientEmail, string subject, string body, bool isHtml)
+        public string SendEmail(string recipientEmail, string subject, string body, bool isHtml, string senderEmail, string senderPassword)
         {
             bool OK = true;
 
@@ -276,7 +276,7 @@ namespace BPT_Service
                 clientDetails.EnableSsl = true;
                 clientDetails.DeliveryMethod = SmtpDeliveryMethod.Network;
                 clientDetails.UseDefaultCredentials = false;
-                clientDetails.Credentials = new NetworkCredential("salamaa135@gmail.com", "thenewpassword4444!");
+                clientDetails.Credentials = new NetworkCredential(senderEmail, senderPassword);
 
                 //Message Details
                 MailMessage mailDetails = new MailMessage();
@@ -300,7 +300,7 @@ namespace BPT_Service
             return " ok ";
         }
 
-        public bool SendReminder(string subject, string body, bool isHtml)
+        public bool SendReminder(string subject, string body, bool isHtml, string senderEmail, string senderPassword)
         {
             bool OK = true;
 
@@ -321,7 +321,7 @@ namespace BPT_Service
                 while (reader.Read())
                 {
                     email = reader["email"].ToString();
-                    SendEmail(email, "Blood Pressure reminder", "please meassure your blood pressure!", false);
+                    SendEmail(email, subject, body, false, senderEmail, senderPassword);
                 }
             }
             catch (Exception ex)
@@ -350,6 +350,7 @@ namespace BPT_Service
             sqlCmd.ExecuteNonQuery();
             connection.Close();
         }
+        
         public List<BloodPressure> GetBloodPressures(int id)
         {
             if (connection.State == System.Data.ConnectionState.Open)

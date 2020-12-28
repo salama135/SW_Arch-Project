@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "G:\\sw-archi\\SW_Arch-Project\\C Sharp\\WCF_Service_Host\\WCF_Service_Host\\WCF_Service_Host.csproj": {}
+    "D:\\4th Year\\Software Design and Architecture\\Project\\SW_Arch-Project\\C Sharp\\WCF_Service_Host\\WCF_Service_Host\\WCF_Service_Host.csproj": {}
   },
   "projects": {
-    "G:\\sw-archi\\SW_Arch-Project\\C Sharp\\WCF_Service_Host\\WCF_Service_Host\\WCF_Service_Host.csproj": {
+    "D:\\4th Year\\Software Design and Architecture\\Project\\SW_Arch-Project\\C Sharp\\WCF_Service_Host\\WCF_Service_Host\\WCF_Service_Host.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\sw-archi\\SW_Arch-Project\\C Sharp\\WCF_Service_Host\\WCF_Service_Host\\WCF_Service_Host.csproj",
+        "projectUniqueName": "D:\\4th Year\\Software Design and Architecture\\Project\\SW_Arch-Project\\C Sharp\\WCF_Service_Host\\WCF_Service_Host\\WCF_Service_Host.csproj",
         "projectName": "WCF_Service_Host",
-        "projectPath": "G:\\sw-archi\\SW_Arch-Project\\C Sharp\\WCF_Service_Host\\WCF_Service_Host\\WCF_Service_Host.csproj",
-        "packagesPath": "C:\\Users\\zulam\\.nuget\\packages\\",
-        "outputPath": "G:\\sw-archi\\SW_Arch-Project\\C Sharp\\WCF_Service_Host\\WCF_Service_Host\\obj\\",
+        "projectPath": "D:\\4th Year\\Software Design and Architecture\\Project\\SW_Arch-Project\\C Sharp\\WCF_Service_Host\\WCF_Service_Host\\WCF_Service_Host.csproj",
+        "packagesPath": "C:\\Users\\Ahmed Salama\\.nuget\\packages\\",
+        "outputPath": "D:\\4th Year\\Software Design and Architecture\\Project\\SW_Arch-Project\\C Sharp\\WCF_Service_Host\\WCF_Service_Host\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\zulam\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Ahmed Salama\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -70,7 +70,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
         }
       }
     }
