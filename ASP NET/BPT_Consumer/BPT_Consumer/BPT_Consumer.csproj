@@ -45,6 +45,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -113,6 +114,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\BPT_Service\BPT_Consumer.BPT_Service.UserInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\BPT_Service\BPT_Consumer.BPT_Service.BloodPressure.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\BPT_Service\Service1.disco" />
@@ -184,6 +188,7 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="SignIn.aspx" />
     <Content Include="Site.Master" />
+    <Content Include="UpdateBP.aspx" />
     <Content Include="UserInfo.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -267,7 +272,17 @@
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Tokenclass.cs" />
+=======
+    <Compile Include="UpdateBP.aspx.cs">
+      <DependentUpon>UpdateBP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateBP.aspx.designer.cs">
+      <DependentUpon>UpdateBP.aspx</DependentUpon>
+    </Compile>
+>>>>>>> bac515fa20e55802e16a1ff789964238533bdd6b
     <Compile Include="UserInfo.aspx.cs">
       <DependentUpon>UserInfo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
