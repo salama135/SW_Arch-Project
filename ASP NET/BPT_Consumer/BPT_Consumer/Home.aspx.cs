@@ -64,6 +64,7 @@ namespace BPT_Consumer
             Tokenclass obj = js.Deserialize<Tokenclass>(responseFromServer);
             GetuserProfile(obj.access_token);
         }
+
         public void GetuserProfile(string accesstoken)
         {
             string url = "https://www.googleapis.com/oauth2/v1/userinfo?alt=json&access_token=" + accesstoken + "";

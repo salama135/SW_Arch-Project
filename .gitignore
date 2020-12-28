@@ -1,6 +1,16 @@
 ###################
 # compiled source #
 ###################
+C Sharp/
+*.com
+*.class
+*.dll
+*.exe
+*.pdb
+*.dll.config
+*.cache
+*.suo
+
 *.com
 *.class
 *.dll
@@ -73,3 +83,4 @@ _[Ss]cripts
 *.nupkg
 *.ncrunchsolution
 *.dot[Cc]over
+*.suo
