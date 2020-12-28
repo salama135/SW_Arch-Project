@@ -74,6 +74,13 @@
                             Diet Recommendation
                         </a>
                         </li>
+
+                        <li class="nav-item">
+                        <a class="nav-link" runat="server" href="UpdateBP.aspx">
+                            <span data-feather="bold"></span>
+                            Update Blood Pressure
+                        </a>
+                        </li>
                     </ul>
                 </div>
             </nav>

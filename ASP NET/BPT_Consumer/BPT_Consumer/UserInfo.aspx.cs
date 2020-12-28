@@ -30,7 +30,6 @@ namespace BPT_Consumer
             BPT_Service.User user = new BPT_Service.User();
             BPT_Service.UserInfo userInfo = new BPT_Service.UserInfo();
 
-
             user.email = String.Format("{0}", Request.Form["inputEmail"]);
             user.password = String.Format("{0}", Request.Form["inputPassword"]);
 

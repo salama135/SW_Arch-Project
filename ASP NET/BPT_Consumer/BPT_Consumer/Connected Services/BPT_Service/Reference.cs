@@ -231,6 +231,18 @@ namespace BPT_Consumer.BPT_Service {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Register", ReplyAction="http://tempuri.org/IService1/RegisterResponse")]
         System.Threading.Tasks.Task<bool> RegisterAsync(string email, string password);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SendEmail", ReplyAction="http://tempuri.org/IService1/SendEmailResponse")]
+        string SendEmail(string recipientEmail, string subject, string body, bool isHtml);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SendEmail", ReplyAction="http://tempuri.org/IService1/SendEmailResponse")]
+        System.Threading.Tasks.Task<string> SendEmailAsync(string recipientEmail, string subject, string body, bool isHtml);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SendReminder", ReplyAction="http://tempuri.org/IService1/SendReminderResponse")]
+        bool SendReminder(string subject, string body, bool isHtml);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SendReminder", ReplyAction="http://tempuri.org/IService1/SendReminderResponse")]
+        System.Threading.Tasks.Task<bool> SendReminderAsync(string subject, string body, bool isHtml);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetUserById", ReplyAction="http://tempuri.org/IService1/GetUserByIdResponse")]
         BPT_Consumer.BPT_Service.User GetUserById(int id);
         
@@ -278,6 +290,12 @@ namespace BPT_Consumer.BPT_Service {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteUserInfo", ReplyAction="http://tempuri.org/IService1/DeleteUserInfoResponse")]
         System.Threading.Tasks.Task DeleteUserInfoAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddBP", ReplyAction="http://tempuri.org/IService1/AddBPResponse")]
+        void AddBP(int BP, int UserID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddBP", ReplyAction="http://tempuri.org/IService1/AddBPResponse")]
+        System.Threading.Tasks.Task AddBPAsync(int BP, int UserID);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -321,6 +339,22 @@ namespace BPT_Consumer.BPT_Service {
         
         public System.Threading.Tasks.Task<bool> RegisterAsync(string email, string password) {
             return base.Channel.RegisterAsync(email, password);
+        }
+        
+        public string SendEmail(string recipientEmail, string subject, string body, bool isHtml) {
+            return base.Channel.SendEmail(recipientEmail, subject, body, isHtml);
+        }
+        
+        public System.Threading.Tasks.Task<string> SendEmailAsync(string recipientEmail, string subject, string body, bool isHtml) {
+            return base.Channel.SendEmailAsync(recipientEmail, subject, body, isHtml);
+        }
+        
+        public bool SendReminder(string subject, string body, bool isHtml) {
+            return base.Channel.SendReminder(subject, body, isHtml);
+        }
+        
+        public System.Threading.Tasks.Task<bool> SendReminderAsync(string subject, string body, bool isHtml) {
+            return base.Channel.SendReminderAsync(subject, body, isHtml);
         }
         
         public BPT_Consumer.BPT_Service.User GetUserById(int id) {
@@ -385,6 +419,14 @@ namespace BPT_Consumer.BPT_Service {
         
         public System.Threading.Tasks.Task DeleteUserInfoAsync(int id) {
             return base.Channel.DeleteUserInfoAsync(id);
+        }
+        
+        public void AddBP(int BP, int UserID) {
+            base.Channel.AddBP(BP, UserID);
+        }
+        
+        public System.Threading.Tasks.Task AddBPAsync(int BP, int UserID) {
+            return base.Channel.AddBPAsync(BP, UserID);
         }
     }
 }

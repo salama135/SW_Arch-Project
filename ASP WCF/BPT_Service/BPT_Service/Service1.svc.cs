@@ -299,12 +299,50 @@ namespace BPT_Service
             return " ok ";
         }
 
-        public bool SendReminder(string recipientEmail, string subject, string body, bool isHtml)
+        public bool SendReminder(string subject, string body, bool isHtml)
         {
             bool OK = true;
 
+            User user = new User();
+
+            if (connection.State == System.Data.ConnectionState.Open)
+                connection.Close();
+
+            if (connection.State == System.Data.ConnectionState.Closed)
+                connection.Open();
+
+            string email;
+
+            try
+            {
+                SqlCommand sqlCommand = new SqlCommand("select email from Users", connection);
+                SqlDataReader reader = sqlCommand.ExecuteReader();
+                while (reader.Read())
+                {
+                    email = reader["email"].ToString();
+                    SendEmail(email, "Blood Pressure reminder", "please meassure your blood pressure!", false);
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+
+            connection.Close();
 
             return OK;
+        }
+
+        public void AddBP(int BP, int UserID)
+        {
+            connection.Open();
+            SqlCommand sqlCmd = new SqlCommand("insert into Blood_Pressure_Records (id, Blood_Pressure, Day, mTime) values (@i, @b, @d, @t)", connection);
+            sqlCmd.Parameters.AddWithValue("@i", UserID);
+            sqlCmd.Parameters.AddWithValue("@b", BP);
+            sqlCmd.Parameters.AddWithValue("@d", DateTime.Today.ToString("d"));
+            sqlCmd.Parameters.AddWithValue("@t", DateTime.Now.ToShortTimeString());
+            sqlCmd.ExecuteNonQuery();
+            connection.Close();
         }
     }
 }
