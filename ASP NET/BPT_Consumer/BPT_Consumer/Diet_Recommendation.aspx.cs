@@ -12,12 +12,11 @@ namespace BPT_Consumer
         protected void Page_Load(object sender, EventArgs e)
         {
 
+          
 
-         
-             
 
-            //int blood_pressure = Global.userInfo.bloodPressure;
-            int blood_pressure = 50;
+            int blood_pressure = Global.userInfo.bloodPressure;
+           // int blood_pressure = 50;
             if (blood_pressure <= 90)
             {
                 //low pressure plan

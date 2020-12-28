@@ -119,6 +119,7 @@
     <Content Include="Connected Services\BPT_Service\BPT_Consumer.BPT_Service.BloodPressure.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Workout.aspx" />
     <None Include="Connected Services\BPT_Service\Service1.disco" />
     <None Include="Connected Services\BPT_Service\configuration91.svcinfo" />
     <None Include="Connected Services\BPT_Service\configuration.svcinfo" />
@@ -290,6 +291,13 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Workout.aspx.cs">
+      <DependentUpon>Workout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workout.aspx.designer.cs">
+      <DependentUpon>Workout.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
