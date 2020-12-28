@@ -300,6 +300,7 @@ namespace BPT_Service
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         public bool SendReminder(string recipientEmail, string subject, string body, bool isHtml)
         {
             bool OK = true;
@@ -308,6 +309,8 @@ namespace BPT_Service
             return OK;
         }
 =======
+=======
+>>>>>>> parent of bac515f... removed my email & password XD
         public bool SendReminder(string subject, string body, bool isHtml)
         {
             bool OK = true;

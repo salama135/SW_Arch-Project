@@ -26,7 +26,11 @@ namespace BPT_Service
 
         [OperationContract]
 <<<<<<< HEAD
+<<<<<<< HEAD
         bool SendReminder(string recipientEmail, string subject, string body, bool isHtml);
+=======
+        bool SendReminder(string subject, string body, bool isHtml);
+>>>>>>> parent of bac515f... removed my email & password XD
 =======
         bool SendReminder(string subject, string body, bool isHtml);
 >>>>>>> parent of bac515f... removed my email & password XD

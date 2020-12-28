@@ -177,7 +177,11 @@ namespace BPT_Service
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SendReminder", ReplyAction="http://tempuri.org/IService1/SendReminderResponse")]
 <<<<<<< HEAD
+<<<<<<< HEAD
         System.Threading.Tasks.Task<bool> SendReminderAsync(string recipientEmail, string subject, string body, bool isHtml);
+=======
+        System.Threading.Tasks.Task<bool> SendReminderAsync(string subject, string body, bool isHtml);
+>>>>>>> parent of bac515f... removed my email & password XD
 =======
         System.Threading.Tasks.Task<bool> SendReminderAsync(string subject, string body, bool isHtml);
 >>>>>>> parent of bac515f... removed my email & password XD
@@ -273,9 +277,15 @@ namespace BPT_Service
         }
         
 <<<<<<< HEAD
+<<<<<<< HEAD
         public System.Threading.Tasks.Task<bool> SendReminderAsync(string recipientEmail, string subject, string body, bool isHtml)
         {
             return base.Channel.SendReminderAsync(recipientEmail, subject, body, isHtml);
+=======
+        public System.Threading.Tasks.Task<bool> SendReminderAsync(string subject, string body, bool isHtml)
+        {
+            return base.Channel.SendReminderAsync(subject, body, isHtml);
+>>>>>>> parent of bac515f... removed my email & password XD
 =======
         public System.Threading.Tasks.Task<bool> SendReminderAsync(string subject, string body, bool isHtml)
         {

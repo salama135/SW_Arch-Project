@@ -2,6 +2,7 @@
   "format": 1,
   "restore": {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "D:\\gam3a\\archiProject\\SW_Arch-Project\\C Sharp\\WCF_Service_Host\\WCF_Service_Host\\WCF_Service_Host.csproj": {}
   },
   "projects": {
@@ -16,6 +17,22 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sheha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+    "G:\\sw-archi\\SW_Arch-Project\\C Sharp\\WCF_Service_Host\\WCF_Service_Host\\WCF_Service_Host.csproj": {}
+  },
+  "projects": {
+    "G:\\sw-archi\\SW_Arch-Project\\C Sharp\\WCF_Service_Host\\WCF_Service_Host\\WCF_Service_Host.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\sw-archi\\SW_Arch-Project\\C Sharp\\WCF_Service_Host\\WCF_Service_Host\\WCF_Service_Host.csproj",
+        "projectName": "WCF_Service_Host",
+        "projectPath": "G:\\sw-archi\\SW_Arch-Project\\C Sharp\\WCF_Service_Host\\WCF_Service_Host\\WCF_Service_Host.csproj",
+        "packagesPath": "C:\\Users\\zulam\\.nuget\\packages\\",
+        "outputPath": "G:\\sw-archi\\SW_Arch-Project\\C Sharp\\WCF_Service_Host\\WCF_Service_Host\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\zulam\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> parent of bac515f... removed my email & password XD
 =======
     "G:\\sw-archi\\SW_Arch-Project\\C Sharp\\WCF_Service_Host\\WCF_Service_Host\\WCF_Service_Host.csproj": {}
   },
@@ -90,7 +107,11 @@
             }
           },
 <<<<<<< HEAD
+<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+>>>>>>> parent of bac515f... removed my email & password XD
 =======
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
 >>>>>>> parent of bac515f... removed my email & password XD
