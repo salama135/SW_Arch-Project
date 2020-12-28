@@ -57,5 +57,8 @@ namespace BPT_Service
 
         [OperationContract]
         void AddBP(int BP, int UserID);
+
+        [OperationContract]
+        public List<BloodPressure> GetBloodPressures(int id);
     }
 }
